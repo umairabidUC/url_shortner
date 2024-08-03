@@ -1,0 +1,844 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.3
+-- Dumped by pg_dump version 16.3
+
+-- Started on 2024-08-03 13:47:58 PKT
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 5 (class 2615 OID 16825)
+-- Name: public; Type: SCHEMA; Schema: -; Owner: umair
+--
+
+-- *not* creating schema, since initdb creates it
+
+
+ALTER SCHEMA public OWNER TO umair;
+
+--
+-- TOC entry 4164 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: umair
+--
+
+COMMENT ON SCHEMA public IS '';
+
+
+--
+-- TOC entry 857 (class 1247 OID 16838)
+-- Name: status; Type: TYPE; Schema: public; Owner: umair
+--
+
+CREATE TYPE public.status AS ENUM (
+    'active',
+    'inactive'
+);
+
+
+ALTER TYPE public.status OWNER TO umair;
+
+--
+-- TOC entry 860 (class 1247 OID 16844)
+-- Name: url_type; Type: TYPE; Schema: public; Owner: umair
+--
+
+CREATE TYPE public.url_type AS ENUM (
+    'store',
+    'product',
+    'misc'
+);
+
+
+ALTER TYPE public.url_type OWNER TO umair;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 217 (class 1259 OID 16852)
+-- Name: ApiKey; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."ApiKey" (
+    api_key_id integer NOT NULL,
+    user_id uuid NOT NULL,
+    api_key character varying(255) NOT NULL,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    expires_at timestamp(6) without time zone,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."ApiKey" OWNER TO umair;
+
+--
+-- TOC entry 216 (class 1259 OID 16851)
+-- Name: ApiKey_api_key_id_seq; Type: SEQUENCE; Schema: public; Owner: umair
+--
+
+CREATE SEQUENCE public."ApiKey_api_key_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."ApiKey_api_key_id_seq" OWNER TO umair;
+
+--
+-- TOC entry 4166 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: ApiKey_api_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: umair
+--
+
+ALTER SEQUENCE public."ApiKey_api_key_id_seq" OWNED BY public."ApiKey".api_key_id;
+
+
+--
+-- TOC entry 219 (class 1259 OID 16862)
+-- Name: AuditLog; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."AuditLog" (
+    audit_id integer NOT NULL,
+    url_id uuid NOT NULL,
+    action character varying(50) NOT NULL,
+    changed_by uuid NOT NULL,
+    change_date timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    details text,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."AuditLog" OWNER TO umair;
+
+--
+-- TOC entry 218 (class 1259 OID 16861)
+-- Name: AuditLog_audit_id_seq; Type: SEQUENCE; Schema: public; Owner: umair
+--
+
+CREATE SEQUENCE public."AuditLog_audit_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."AuditLog_audit_id_seq" OWNER TO umair;
+
+--
+-- TOC entry 4167 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: AuditLog_audit_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: umair
+--
+
+ALTER SEQUENCE public."AuditLog_audit_id_seq" OWNED BY public."AuditLog".audit_id;
+
+
+--
+-- TOC entry 221 (class 1259 OID 16875)
+-- Name: Logo; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."Logo" (
+    logo_id integer NOT NULL,
+    user_id uuid NOT NULL,
+    logo_path character varying(255) NOT NULL,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."Logo" OWNER TO umair;
+
+--
+-- TOC entry 220 (class 1259 OID 16874)
+-- Name: Logo_logo_id_seq; Type: SEQUENCE; Schema: public; Owner: umair
+--
+
+CREATE SEQUENCE public."Logo_logo_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."Logo_logo_id_seq" OWNER TO umair;
+
+--
+-- TOC entry 4168 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: Logo_logo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: umair
+--
+
+ALTER SEQUENCE public."Logo_logo_id_seq" OWNED BY public."Logo".logo_id;
+
+
+--
+-- TOC entry 222 (class 1259 OID 16883)
+-- Name: Url; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."Url" (
+    url_id uuid DEFAULT gen_random_uuid() NOT NULL,
+    user_id uuid,
+    original_url text,
+    short_url character varying(10) NOT NULL,
+    logo_id integer,
+    tag_id integer,
+    url_type public.url_type,
+    associated boolean DEFAULT false NOT NULL,
+    expiration_date date,
+    status public.status DEFAULT 'active'::public.status NOT NULL,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL,
+    is_pre_generated boolean DEFAULT false NOT NULL,
+    associated_at timestamp(6) without time zone
+);
+
+
+ALTER TABLE public."Url" OWNER TO umair;
+
+--
+-- TOC entry 224 (class 1259 OID 16898)
+-- Name: UrlClick; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."UrlClick" (
+    click_id integer NOT NULL,
+    url_id uuid NOT NULL,
+    access_date date NOT NULL,
+    access_time time(6) without time zone NOT NULL,
+    ip_address character varying(45) NOT NULL,
+    user_agent text NOT NULL,
+    referrer text,
+    country character varying(50),
+    city character varying(50),
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."UrlClick" OWNER TO umair;
+
+--
+-- TOC entry 223 (class 1259 OID 16897)
+-- Name: UrlClick_click_id_seq; Type: SEQUENCE; Schema: public; Owner: umair
+--
+
+CREATE SEQUENCE public."UrlClick_click_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."UrlClick_click_id_seq" OWNER TO umair;
+
+--
+-- TOC entry 4169 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: UrlClick_click_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: umair
+--
+
+ALTER SEQUENCE public."UrlClick_click_id_seq" OWNED BY public."UrlClick".click_id;
+
+
+--
+-- TOC entry 226 (class 1259 OID 16910)
+-- Name: UrlTag; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."UrlTag" (
+    tag_id integer NOT NULL,
+    user_id uuid NOT NULL,
+    tag_name character varying(50) NOT NULL,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."UrlTag" OWNER TO umair;
+
+--
+-- TOC entry 225 (class 1259 OID 16909)
+-- Name: UrlTag_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: umair
+--
+
+CREATE SEQUENCE public."UrlTag_tag_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."UrlTag_tag_id_seq" OWNER TO umair;
+
+--
+-- TOC entry 4170 (class 0 OID 0)
+-- Dependencies: 225
+-- Name: UrlTag_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: umair
+--
+
+ALTER SEQUENCE public."UrlTag_tag_id_seq" OWNED BY public."UrlTag".tag_id;
+
+
+--
+-- TOC entry 227 (class 1259 OID 16919)
+-- Name: User; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."User" (
+    user_id uuid DEFAULT gen_random_uuid() NOT NULL,
+    username character varying(50) NOT NULL,
+    email character varying(100) NOT NULL,
+    password_hash character varying(255) NOT NULL,
+    role_id integer,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."User" OWNER TO umair;
+
+--
+-- TOC entry 229 (class 1259 OID 16929)
+-- Name: UserRole; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public."UserRole" (
+    role_id integer NOT NULL,
+    role_name character varying(50) NOT NULL,
+    description text,
+    created_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp(6) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    deleted_at timestamp(6) without time zone,
+    is_deleted boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public."UserRole" OWNER TO umair;
+
+--
+-- TOC entry 228 (class 1259 OID 16928)
+-- Name: UserRole_role_id_seq; Type: SEQUENCE; Schema: public; Owner: umair
+--
+
+CREATE SEQUENCE public."UserRole_role_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."UserRole_role_id_seq" OWNER TO umair;
+
+--
+-- TOC entry 4171 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: UserRole_role_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: umair
+--
+
+ALTER SEQUENCE public."UserRole_role_id_seq" OWNED BY public."UserRole".role_id;
+
+
+--
+-- TOC entry 215 (class 1259 OID 16826)
+-- Name: _prisma_migrations; Type: TABLE; Schema: public; Owner: umair
+--
+
+CREATE TABLE public._prisma_migrations (
+    id character varying(36) NOT NULL,
+    checksum character varying(64) NOT NULL,
+    finished_at timestamp with time zone,
+    migration_name character varying(255) NOT NULL,
+    logs text,
+    rolled_back_at timestamp with time zone,
+    started_at timestamp with time zone DEFAULT now() NOT NULL,
+    applied_steps_count integer DEFAULT 0 NOT NULL
+);
+
+
+ALTER TABLE public._prisma_migrations OWNER TO umair;
+
+--
+-- TOC entry 3933 (class 2604 OID 16855)
+-- Name: ApiKey api_key_id; Type: DEFAULT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."ApiKey" ALTER COLUMN api_key_id SET DEFAULT nextval('public."ApiKey_api_key_id_seq"'::regclass);
+
+
+--
+-- TOC entry 3937 (class 2604 OID 16865)
+-- Name: AuditLog audit_id; Type: DEFAULT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."AuditLog" ALTER COLUMN audit_id SET DEFAULT nextval('public."AuditLog_audit_id_seq"'::regclass);
+
+
+--
+-- TOC entry 3942 (class 2604 OID 16878)
+-- Name: Logo logo_id; Type: DEFAULT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Logo" ALTER COLUMN logo_id SET DEFAULT nextval('public."Logo_logo_id_seq"'::regclass);
+
+
+--
+-- TOC entry 3952 (class 2604 OID 16901)
+-- Name: UrlClick click_id; Type: DEFAULT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UrlClick" ALTER COLUMN click_id SET DEFAULT nextval('public."UrlClick_click_id_seq"'::regclass);
+
+
+--
+-- TOC entry 3956 (class 2604 OID 16913)
+-- Name: UrlTag tag_id; Type: DEFAULT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UrlTag" ALTER COLUMN tag_id SET DEFAULT nextval('public."UrlTag_tag_id_seq"'::regclass);
+
+
+--
+-- TOC entry 3964 (class 2604 OID 16932)
+-- Name: UserRole role_id; Type: DEFAULT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UserRole" ALTER COLUMN role_id SET DEFAULT nextval('public."UserRole_role_id_seq"'::regclass);
+
+
+--
+-- TOC entry 4146 (class 0 OID 16852)
+-- Dependencies: 217
+-- Data for Name: ApiKey; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."ApiKey" (api_key_id, user_id, api_key, created_at, expires_at, updated_at, deleted_at, is_deleted) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4148 (class 0 OID 16862)
+-- Dependencies: 219
+-- Data for Name: AuditLog; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."AuditLog" (audit_id, url_id, action, changed_by, change_date, details, created_at, updated_at, deleted_at, is_deleted) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4150 (class 0 OID 16875)
+-- Dependencies: 221
+-- Data for Name: Logo; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."Logo" (logo_id, user_id, logo_path, created_at, updated_at, deleted_at, is_deleted) FROM stdin;
+1	34f30d23-c601-4fc0-a353-c8f80e72b4cf	path/to/logo1.png	2024-07-30 13:25:20.401728	2024-07-30 13:25:20.401728	\N	f
+2	34f30d23-c601-4fc0-a353-c8f80e72b4cf	path/to/logo2.png	2024-07-30 13:25:20.401728	2024-07-30 13:25:20.401728	\N	f
+3	f16fef3a-ecc3-4853-8438-6862bcac95a7	path/to/logo3.png	2024-07-30 13:25:20.401728	2024-07-30 13:25:20.401728	\N	f
+4	f16fef3a-ecc3-4853-8438-6862bcac95a7	path/to/logo4.png	2024-07-30 13:25:20.401728	2024-07-30 13:25:20.401728	\N	f
+\.
+
+
+--
+-- TOC entry 4151 (class 0 OID 16883)
+-- Dependencies: 222
+-- Data for Name: Url; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."Url" (url_id, user_id, original_url, short_url, logo_id, tag_id, url_type, associated, expiration_date, status, created_at, updated_at, deleted_at, is_deleted, is_pre_generated, associated_at) FROM stdin;
+a0236b66-5e10-4eaa-80f6-c26704138056	34f30d23-c601-4fc0-a353-c8f80e72b4cf	https://example.com/2	short2	2	2	product	f	2025-07-30	active	2024-07-30 13:27:03.58315	2024-07-30 13:27:03.58315	\N	f	f	\N
+e6968bea-c525-4654-b895-ebdbcb003fb2	f16fef3a-ecc3-4853-8438-6862bcac95a7	https://example.com/3	short3	3	3	misc	t	2025-07-30	active	2024-07-30 13:27:03.58315	2024-07-30 13:27:03.58315	\N	f	f	\N
+d91e9403-1d03-4446-8a7b-abe74d95d1ff	f16fef3a-ecc3-4853-8438-6862bcac95a7	https://example.com/4	short4	4	4	store	f	2025-07-30	active	2024-07-30 13:27:03.58315	2024-07-30 13:27:03.58315	\N	f	f	\N
+ad1e9403-1d03-4446-8a7d-abc44d95d1ff	f16fef3a-ecc3-4853-8438-6862bcac95a7	https://example.com/5	short5	4	4	store	f	2025-07-30	active	2024-07-31 07:04:27.749	2024-07-31 07:04:27.749	\N	f	f	\N
+ad1e9403-1d03-4446-8a7d-abc44d95d2ff	34f30d23-c601-4fc0-a353-c8f80e72b4cf	https://example.com/6	short6	4	4	store	f	2025-07-30	inactive	2024-07-31 08:14:02.4	2024-07-31 08:14:02.4	\N	f	f	\N
+\.
+
+
+--
+-- TOC entry 4153 (class 0 OID 16898)
+-- Dependencies: 224
+-- Data for Name: UrlClick; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."UrlClick" (click_id, url_id, access_date, access_time, ip_address, user_agent, referrer, country, city, created_at, updated_at, deleted_at, is_deleted) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4155 (class 0 OID 16910)
+-- Dependencies: 226
+-- Data for Name: UrlTag; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."UrlTag" (tag_id, user_id, tag_name, created_at, updated_at, deleted_at, is_deleted) FROM stdin;
+1	34f30d23-c601-4fc0-a353-c8f80e72b4cf	tag1	2024-07-30 13:26:49.860771	2024-07-30 13:26:49.860771	\N	f
+2	34f30d23-c601-4fc0-a353-c8f80e72b4cf	tag2	2024-07-30 13:26:49.860771	2024-07-30 13:26:49.860771	\N	f
+3	f16fef3a-ecc3-4853-8438-6862bcac95a7	tag3	2024-07-30 13:26:49.860771	2024-07-30 13:26:49.860771	\N	f
+4	f16fef3a-ecc3-4853-8438-6862bcac95a7	tag4	2024-07-30 13:26:49.860771	2024-07-30 13:26:49.860771	\N	f
+\.
+
+
+--
+-- TOC entry 4156 (class 0 OID 16919)
+-- Dependencies: 227
+-- Data for Name: User; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."User" (user_id, username, email, password_hash, role_id, created_at, updated_at, deleted_at, is_deleted) FROM stdin;
+34f30d23-c601-4fc0-a353-c8f80e72b4cf	john_doe	john@example.com	hashed_password1	1	2024-07-30 13:19:25.286581	2024-07-30 13:19:25.286581	\N	f
+f16fef3a-ecc3-4853-8438-6862bcac95a7	jane_doe	jane@example.com	hashed_password2	2	2024-07-30 13:19:25.286581	2024-07-30 13:19:25.286581	\N	f
+daf4cf50-b9df-4747-9133-c30f9af67826	editor_user	editor@example.com	hashed_password3	3	2024-07-30 13:19:25.286581	2024-07-30 13:19:25.286581	\N	f
+efd009aa-e391-49b5-8978-e612552ea3ac	viewer_user	viewer@example.com	hashed_password4	4	2024-07-30 13:19:25.286581	2024-07-30 13:19:25.286581	\N	f
+\.
+
+
+--
+-- TOC entry 4158 (class 0 OID 16929)
+-- Dependencies: 229
+-- Data for Name: UserRole; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public."UserRole" (role_id, role_name, description, created_at, updated_at, deleted_at, is_deleted) FROM stdin;
+1	Admin	Administrator with full access	2024-07-30 13:18:14.958165	2024-07-30 13:18:14.958165	\N	f
+2	User	Regular user with limited access	2024-07-30 13:18:14.958165	2024-07-30 13:18:14.958165	\N	f
+3	Editor	User with editing privileges	2024-07-30 13:18:14.958165	2024-07-30 13:18:14.958165	\N	f
+4	Viewer	User with view-only access	2024-07-30 13:18:14.958165	2024-07-30 13:18:14.958165	\N	f
+\.
+
+
+--
+-- TOC entry 4144 (class 0 OID 16826)
+-- Dependencies: 215
+-- Data for Name: _prisma_migrations; Type: TABLE DATA; Schema: public; Owner: umair
+--
+
+COPY public._prisma_migrations (id, checksum, finished_at, migration_name, logs, rolled_back_at, started_at, applied_steps_count) FROM stdin;
+1fb52096-5a5e-4f9e-9f59-86c9e71309c7	7d0d6daba011d4039d97961f0d5947075890d28022ec0064981617b319a7c7df	2024-07-29 19:11:28.241087+05	20240729141128_0_init	\N	\N	2024-07-29 19:11:28.038375+05	1
+\.
+
+
+--
+-- TOC entry 4172 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: ApiKey_api_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: umair
+--
+
+SELECT pg_catalog.setval('public."ApiKey_api_key_id_seq"', 1, false);
+
+
+--
+-- TOC entry 4173 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: AuditLog_audit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: umair
+--
+
+SELECT pg_catalog.setval('public."AuditLog_audit_id_seq"', 1, false);
+
+
+--
+-- TOC entry 4174 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: Logo_logo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: umair
+--
+
+SELECT pg_catalog.setval('public."Logo_logo_id_seq"', 4, true);
+
+
+--
+-- TOC entry 4175 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: UrlClick_click_id_seq; Type: SEQUENCE SET; Schema: public; Owner: umair
+--
+
+SELECT pg_catalog.setval('public."UrlClick_click_id_seq"', 1, false);
+
+
+--
+-- TOC entry 4176 (class 0 OID 0)
+-- Dependencies: 225
+-- Name: UrlTag_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: umair
+--
+
+SELECT pg_catalog.setval('public."UrlTag_tag_id_seq"', 4, true);
+
+
+--
+-- TOC entry 4177 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: UserRole_role_id_seq; Type: SEQUENCE SET; Schema: public; Owner: umair
+--
+
+SELECT pg_catalog.setval('public."UserRole_role_id_seq"', 5, true);
+
+
+--
+-- TOC entry 3972 (class 2606 OID 16860)
+-- Name: ApiKey ApiKey_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."ApiKey"
+    ADD CONSTRAINT "ApiKey_pkey" PRIMARY KEY (api_key_id);
+
+
+--
+-- TOC entry 3974 (class 2606 OID 16873)
+-- Name: AuditLog AuditLog_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."AuditLog"
+    ADD CONSTRAINT "AuditLog_pkey" PRIMARY KEY (audit_id);
+
+
+--
+-- TOC entry 3976 (class 2606 OID 16882)
+-- Name: Logo Logo_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Logo"
+    ADD CONSTRAINT "Logo_pkey" PRIMARY KEY (logo_id);
+
+
+--
+-- TOC entry 3981 (class 2606 OID 16908)
+-- Name: UrlClick UrlClick_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UrlClick"
+    ADD CONSTRAINT "UrlClick_pkey" PRIMARY KEY (click_id);
+
+
+--
+-- TOC entry 3983 (class 2606 OID 16918)
+-- Name: UrlTag UrlTag_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UrlTag"
+    ADD CONSTRAINT "UrlTag_pkey" PRIMARY KEY (tag_id);
+
+
+--
+-- TOC entry 3978 (class 2606 OID 16896)
+-- Name: Url Url_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Url"
+    ADD CONSTRAINT "Url_pkey" PRIMARY KEY (url_id);
+
+
+--
+-- TOC entry 3989 (class 2606 OID 16939)
+-- Name: UserRole UserRole_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UserRole"
+    ADD CONSTRAINT "UserRole_pkey" PRIMARY KEY (role_id);
+
+
+--
+-- TOC entry 3986 (class 2606 OID 16927)
+-- Name: User User_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."User"
+    ADD CONSTRAINT "User_pkey" PRIMARY KEY (user_id);
+
+
+--
+-- TOC entry 3969 (class 2606 OID 16834)
+-- Name: _prisma_migrations _prisma_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public._prisma_migrations
+    ADD CONSTRAINT _prisma_migrations_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3970 (class 1259 OID 16940)
+-- Name: ApiKey_api_key_key; Type: INDEX; Schema: public; Owner: umair
+--
+
+CREATE UNIQUE INDEX "ApiKey_api_key_key" ON public."ApiKey" USING btree (api_key);
+
+
+--
+-- TOC entry 3979 (class 1259 OID 16941)
+-- Name: Url_short_url_key; Type: INDEX; Schema: public; Owner: umair
+--
+
+CREATE UNIQUE INDEX "Url_short_url_key" ON public."Url" USING btree (short_url);
+
+
+--
+-- TOC entry 3990 (class 1259 OID 16944)
+-- Name: UserRole_role_name_key; Type: INDEX; Schema: public; Owner: umair
+--
+
+CREATE UNIQUE INDEX "UserRole_role_name_key" ON public."UserRole" USING btree (role_name);
+
+
+--
+-- TOC entry 3984 (class 1259 OID 16943)
+-- Name: User_email_key; Type: INDEX; Schema: public; Owner: umair
+--
+
+CREATE UNIQUE INDEX "User_email_key" ON public."User" USING btree (email);
+
+
+--
+-- TOC entry 3987 (class 1259 OID 16942)
+-- Name: User_username_key; Type: INDEX; Schema: public; Owner: umair
+--
+
+CREATE UNIQUE INDEX "User_username_key" ON public."User" USING btree (username);
+
+
+--
+-- TOC entry 3991 (class 2606 OID 16945)
+-- Name: ApiKey ApiKey_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."ApiKey"
+    ADD CONSTRAINT "ApiKey_user_id_fkey" FOREIGN KEY (user_id) REFERENCES public."User"(user_id);
+
+
+--
+-- TOC entry 3992 (class 2606 OID 16950)
+-- Name: AuditLog AuditLog_changed_by_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."AuditLog"
+    ADD CONSTRAINT "AuditLog_changed_by_fkey" FOREIGN KEY (changed_by) REFERENCES public."User"(user_id);
+
+
+--
+-- TOC entry 3993 (class 2606 OID 16955)
+-- Name: AuditLog AuditLog_url_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."AuditLog"
+    ADD CONSTRAINT "AuditLog_url_id_fkey" FOREIGN KEY (url_id) REFERENCES public."Url"(url_id) ON DELETE CASCADE;
+
+
+--
+-- TOC entry 3994 (class 2606 OID 16960)
+-- Name: Logo Logo_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Logo"
+    ADD CONSTRAINT "Logo_user_id_fkey" FOREIGN KEY (user_id) REFERENCES public."User"(user_id) ON DELETE CASCADE;
+
+
+--
+-- TOC entry 3998 (class 2606 OID 16980)
+-- Name: UrlClick UrlClick_url_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UrlClick"
+    ADD CONSTRAINT "UrlClick_url_id_fkey" FOREIGN KEY (url_id) REFERENCES public."Url"(url_id) ON DELETE CASCADE;
+
+
+--
+-- TOC entry 3999 (class 2606 OID 16985)
+-- Name: UrlTag UrlTag_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."UrlTag"
+    ADD CONSTRAINT "UrlTag_user_id_fkey" FOREIGN KEY (user_id) REFERENCES public."User"(user_id) ON DELETE CASCADE;
+
+
+--
+-- TOC entry 3995 (class 2606 OID 16965)
+-- Name: Url Url_logo_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Url"
+    ADD CONSTRAINT "Url_logo_id_fkey" FOREIGN KEY (logo_id) REFERENCES public."Logo"(logo_id);
+
+
+--
+-- TOC entry 3996 (class 2606 OID 16970)
+-- Name: Url Url_tag_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Url"
+    ADD CONSTRAINT "Url_tag_id_fkey" FOREIGN KEY (tag_id) REFERENCES public."UrlTag"(tag_id);
+
+
+--
+-- TOC entry 3997 (class 2606 OID 16975)
+-- Name: Url Url_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."Url"
+    ADD CONSTRAINT "Url_user_id_fkey" FOREIGN KEY (user_id) REFERENCES public."User"(user_id) ON DELETE CASCADE;
+
+
+--
+-- TOC entry 4000 (class 2606 OID 16990)
+-- Name: User User_role_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: umair
+--
+
+ALTER TABLE ONLY public."User"
+    ADD CONSTRAINT "User_role_id_fkey" FOREIGN KEY (role_id) REFERENCES public."UserRole"(role_id);
+
+
+--
+-- TOC entry 4165 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: umair
+--
+
+REVOKE USAGE ON SCHEMA public FROM PUBLIC;
+
+
+-- Completed on 2024-08-03 13:47:58 PKT
+
+--
+-- PostgreSQL database dump complete
+--
+
