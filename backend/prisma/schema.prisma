@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ApiKey {
+  api_key_id Int       @id @default(autoincrement())
+  user_id    String    @db.Uuid
+  api_key    String    @unique @db.VarChar(255)
+  created_at DateTime  @default(now()) @db.Timestamp(6)
+  expires_at DateTime? @db.Timestamp(6)
+  updated_at DateTime  @default(now()) @db.Timestamp(6)
+  deleted_at DateTime? @db.Timestamp(6)
+  is_deleted Boolean   @default(false)
+  user       User      @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model AuditLog {
+  audit_id    Int       @id @default(autoincrement())
+  url_id      String    @db.Uuid
+  action      String    @db.VarChar(50)
+  changed_by  String    @db.Uuid
+  change_date DateTime  @default(now()) @db.Timestamp(6)
+  details     String?
+  created_at  DateTime  @default(now()) @db.Timestamp(6)
+  updated_at  DateTime  @default(now()) @db.Timestamp(6)
+  deleted_at  DateTime? @db.Timestamp(6)
+  is_deleted  Boolean   @default(false)
+  user        User      @relation(fields: [changed_by], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  url         Url       @relation(fields: [url_id], references: [url_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model Logo {
+  logo_id    Int       @id @default(autoincrement())
+  user_id    String    @db.Uuid
+  logo_path  String    @db.VarChar(255)
+  created_at DateTime  @default(now()) @db.Timestamp(6)
+  updated_at DateTime? @db.Timestamp(6)
+  deleted_at DateTime? @db.Timestamp(6)
+  is_deleted Boolean   @default(false)
+  user       User      @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+  url        Url[]
+}
+
+model Url {
+  url_id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id          String?     @db.Uuid
+  original_url     String?
+  short_url        String      @unique @db.VarChar(10)
+  logo_id          Int?
+  tag_id           Int?
+  url_type         url_type?
+  associated       Boolean     @default(false)
+  expiration_date  DateTime?   @db.Date
+  status           status      @default(active)
+  created_at       DateTime    @default(now()) @db.Timestamp(6)
+  updated_at       DateTime    @default(now()) @db.Timestamp(6)
+  deleted_at       DateTime?   @db.Timestamp(6)
+  is_deleted       Boolean     @default(false)
+  is_pre_generated Boolean     @default(false)
+  associated_at    DateTime?   @db.Timestamp(6)
+  audit_log        AuditLog[]
+  logo             Logo?       @relation(fields: [logo_id], references: [logo_id], onDelete: NoAction, onUpdate: NoAction)
+  url_tag          UrlTag?    @relation(fields: [tag_id], references: [tag_id], onDelete: NoAction, onUpdate: NoAction)
+  user             User?       @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+  url_click        UrlClick[]
+}
+
+model UrlClick {
+  click_id    Int       @id @default(autoincrement())
+  url_id      String    @db.Uuid
+  access_date DateTime  @db.Date
+  access_time DateTime  @db.Time(6)
+  ip_address  String    @db.VarChar(45)
+  user_agent  String
+  referrer    String?
+  country     String?   @db.VarChar(50)
+  city        String?   @db.VarChar(50)
+  created_at  DateTime  @default(now()) @db.Timestamp(6)
+  updated_at  DateTime  @default(now()) @db.Timestamp(6)
+  deleted_at  DateTime? @db.Timestamp(6)
+  is_deleted  Boolean   @default(false)
+  url         Url       @relation(fields: [url_id], references: [url_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model UrlTag {
+  tag_id     Int       @id @default(autoincrement())
+  user_id    String    @db.Uuid
+  tag_name   String    @db.VarChar(50)
+  created_at DateTime  @default(now()) @db.Timestamp(6)
+  updated_at DateTime  @default(now()) @db.Timestamp(6)
+  deleted_at DateTime? @db.Timestamp(6)
+  is_deleted Boolean   @default(false)
+  url        Url[]
+  user       User      @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model User {
+  user_id       String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  username      String      @unique @db.VarChar(50)
+  email         String      @unique @db.VarChar(100)
+  password_hash String      @db.VarChar(255)
+  role_id       Int?
+  created_at    DateTime    @default(now()) @db.Timestamp(6)
+  updated_at    DateTime    @default(now()) @db.Timestamp(6)
+  deleted_at    DateTime?   @db.Timestamp(6)
+  is_deleted    Boolean     @default(false)
+  api_key       ApiKey[]
+  audit_log     AuditLog[]
+  logo          Logo[]
+  url           Url[]
+  url_tag       UrlTag[]
+  user_role     UserRole?  @relation(fields: [role_id], references: [role_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model UserRole {
+  role_id     Int       @id @default(autoincrement())
+  role_name   String    @unique @db.VarChar(50)
+  description String?
+  created_at  DateTime  @default(now()) @db.Timestamp(6)
+  updated_at  DateTime  @default(now()) @db.Timestamp(6)
+  deleted_at  DateTime? @db.Timestamp(6)
+  is_deleted  Boolean   @default(false)
+  user        User[]
+}
+
+enum status {
+  active
+  inactive
+}
+
+enum url_type {
+  store
+  product
+  misc
+}
