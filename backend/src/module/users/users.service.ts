@@ -1,22 +1,32 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+
+import { DatabaseService } from '../database/database.service';
 
 @Injectable()
 export class UsersService {
-  create(createUserDto: CreateUserDto) {
+  constructor(private readonly databaseService: DatabaseService){}
+  create() {
     return 'This action adds a new user';
   }
 
   findAll() {
     return `This action returns all users`;
   }
+  findUser(email:string, password:string){
+    const userFromDb = this.databaseService.user.findUnique({
+      where: {
+        email: email,
+        password_hash: password 
+      }
+    })
 
+    if(userFromDb) return userFromDb;
+  }
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
+  update(id: number) {
     return `This action updates a #${id} user`;
   }
 

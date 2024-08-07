@@ -1,3 +1,4 @@
+"use client";
 /**
  * v0 by Vercel.
  * @see https://v0.dev/t/OCjpGJd3fXv
@@ -8,10 +9,47 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
+import { useForm, SubmitHandler } from "react-hook-form"
+import * as z from 'zod'
+import { signInAction } from "@/actions/authActions/signIn";
+import {signInSchema} from "@/actions/signInSchema"
+import { AuroraBackground } from "@/components/ui/aurora-background";
+import { motion } from "framer-motion";
+import { useToast } from "@/components/ui/use-toast"
+import {Spinner} from "@nextui-org/spinner";
+import { useFormStatus } from "react-dom";
+import { useRouter } from "next/navigation";
 
-export default function Component() {
+export default function SignInPage() {
+  const { register, handleSubmit } = useForm<z.infer<typeof signInSchema>>()
+  const status = useFormStatus()
+  const { toast } = useToast()
+  const router = useRouter();
+  const onSubmit: SubmitHandler<z.infer<typeof signInSchema>> = async (data) => {
+    const { error } = await signInAction(data);
+ 
+    if (error) {
+      toast({
+        variant: "destructive",
+        title: `ERROR: ${error}`,
+        description: "Please type the correct credentials",
+      });
+    }
+    else router.push('/dashboard');
+ };
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
+    <AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
+        <div className="flex  flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-foreground">
@@ -19,17 +57,18 @@ export default function Component() {
           </h2>
           <p className="mt-2 text-center text-sm text-muted-foreground">
             Or{" "}
-            <Link href="#" className="font-medium text-primary hover:text-primary/80" prefetch={false}>
+            <Link href="/signup" className="font-medium text-primary hover:text-primary/80" prefetch={false}>
               create a new account
             </Link>
           </p>
         </div>
-        <form className="space-y-6" action="#" method="POST">
+        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} method="POST">
           <div>
             <Label htmlFor="email" className="sr-only">
               Email address
             </Label>
             <Input
+              {...register("email")}
               id="email"
               name="email"
               type="email"
@@ -44,6 +83,7 @@ export default function Component() {
               Password
             </Label>
             <Input
+              {...register("password")}
               id="password"
               name="password"
               type="password"
@@ -70,8 +110,9 @@ export default function Component() {
             <Button
               type="submit"
               className="flex w-full justify-center rounded-md bg-primary py-2 px-4 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              disabled={status.pending}
             >
-              Sign in
+              {status?.pending ? <Spinner />  : "Sign in"}
             </Button>
           </div>
         </form>
@@ -106,6 +147,9 @@ export default function Component() {
         </div>
       </div>
     </div>
+      </motion.div>
+    </AuroraBackground>
+
   )
 }
 

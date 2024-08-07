@@ -1,5 +1,6 @@
 import { ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus } from '@nestjs/common';
 import { LoggerService } from '../logger/logger.service';
+import { EXCEPTION_FILTERS_METADATA } from '@nestjs/common/constants';
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
@@ -20,11 +21,11 @@ export class AllExceptionsFilter implements ExceptionFilter {
             ? exception.getResponse()
             : JSON.stringify(exception.getResponse()))
         : 'Internal server error';
-  
+        console.log(exception)
       // Log the error without the stack trace
       this.loggerService.error(
-        `Error - ${request.method} ${request.url} - Status: ${status} - Message: ${message}`,
-        undefined, // Pass undefined to omit stack trace
+        `Error - ${request.method} ${request.url} - Status: ${status} - Message: ${message} ${exception instanceof HttpException ? exception.stack : ""}`,
+        exception instanceof HttpException ? exception.stack : undefined, // Pass undefined to omit stack trace
         'ExceptionFilter',
         'ExceptionHandler'
       );

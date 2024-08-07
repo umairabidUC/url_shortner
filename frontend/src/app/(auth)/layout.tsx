@@ -1,6 +1,8 @@
 import { Manrope } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
+import Provider from '@/lib/Provider'
+import { Toaster } from '@/components/ui/toaster'
 
 const fontHeading = Manrope({
   subsets: ['latin'],
@@ -18,7 +20,7 @@ export default function Layout({ children }: Readonly<{
     children: React.ReactNode;
   }>) {
   return (
-    <html lang="en">
+    <html lang="en" className='dark'>
       <body 
         className={cn(
           'antialiased',
@@ -26,7 +28,10 @@ export default function Layout({ children }: Readonly<{
           fontBody.variable
         )}
       >
+        <Toaster />
+        <Provider>
         {children}
+        </Provider>
       </body>
     </html>
   )

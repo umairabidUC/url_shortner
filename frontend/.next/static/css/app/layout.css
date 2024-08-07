@@ -1,6 +1,6 @@
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Manrope","arguments":[{"subsets":["latin"],"display":"swap","variable":"--font-heading"}],"variableName":"fontHeading"} ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Manrope","arguments":[{"subsets":["latin"],"display":"swap","variable":"--font-heading"}],"variableName":"fontHeading"} ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: '__Manrope_da1155';
@@ -59,9 +59,9 @@
 }.__variable_da1155 {--font-heading: '__Manrope_da1155', '__Manrope_Fallback_da1155'
 }
 
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Manrope","arguments":[{"subsets":["latin"],"display":"swap","variable":"--font-body"}],"variableName":"fontBody"} ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Manrope","arguments":[{"subsets":["latin"],"display":"swap","variable":"--font-body"}],"variableName":"fontBody"} ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: '__Manrope_da1155';
@@ -518,6 +518,1081 @@ video {
 [hidden] {
   display: none;
 }
+
+:root {
+  --inherit: inherit;
+  --current: currentColor;
+  --transparent: transparent;
+  --black: #000;
+  --white: #fff;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  --zinc-50: #fafafa;
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b;
+  --zinc-950: #09090b;
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+  --stone-950: #0c0a09;
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-200: #fecaca;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
+  --red-900: #7f1d1d;
+  --red-950: #450a0a;
+  --orange-50: #fff7ed;
+  --orange-100: #ffedd5;
+  --orange-200: #fed7aa;
+  --orange-300: #fdba74;
+  --orange-400: #fb923c;
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
+  --orange-700: #c2410c;
+  --orange-800: #9a3412;
+  --orange-900: #7c2d12;
+  --orange-950: #431407;
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-200: #fde68a;
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+  --amber-900: #78350f;
+  --amber-950: #451a03;
+  --yellow-50: #fefce8;
+  --yellow-100: #fef9c3;
+  --yellow-200: #fef08a;
+  --yellow-300: #fde047;
+  --yellow-400: #facc15;
+  --yellow-500: #eab308;
+  --yellow-600: #ca8a04;
+  --yellow-700: #a16207;
+  --yellow-800: #854d0e;
+  --yellow-900: #713f12;
+  --yellow-950: #422006;
+  --lime-50: #f7fee7;
+  --lime-100: #ecfccb;
+  --lime-200: #d9f99d;
+  --lime-300: #bef264;
+  --lime-400: #a3e635;
+  --lime-500: #84cc16;
+  --lime-600: #65a30d;
+  --lime-700: #4d7c0f;
+  --lime-800: #3f6212;
+  --lime-900: #365314;
+  --lime-950: #1a2e05;
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-300: #86efac;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+  --green-950: #052e16;
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  --emerald-950: #022c22;
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-200: #99f6e4;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-900: #134e4a;
+  --teal-950: #042f2e;
+  --cyan-50: #ecfeff;
+  --cyan-100: #cffafe;
+  --cyan-200: #a5f3fc;
+  --cyan-300: #67e8f9;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --cyan-700: #0e7490;
+  --cyan-800: #155e75;
+  --cyan-900: #164e63;
+  --cyan-950: #083344;
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+  --sky-800: #075985;
+  --sky-900: #0c4a6e;
+  --sky-950: #082f49;
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --blue-950: #172554;
+  --indigo-50: #eef2ff;
+  --indigo-100: #e0e7ff;
+  --indigo-200: #c7d2fe;
+  --indigo-300: #a5b4fc;
+  --indigo-400: #818cf8;
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --indigo-700: #4338ca;
+  --indigo-800: #3730a3;
+  --indigo-900: #312e81;
+  --indigo-950: #1e1b4b;
+  --violet-50: #f5f3ff;
+  --violet-100: #ede9fe;
+  --violet-200: #ddd6fe;
+  --violet-300: #c4b5fd;
+  --violet-400: #a78bfa;
+  --violet-500: #8b5cf6;
+  --violet-600: #7c3aed;
+  --violet-700: #6d28d9;
+  --violet-800: #5b21b6;
+  --violet-900: #4c1d95;
+  --violet-950: #2e1065;
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7e22ce;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+  --purple-950: #3b0764;
+  --fuchsia-50: #fdf4ff;
+  --fuchsia-100: #fae8ff;
+  --fuchsia-200: #f5d0fe;
+  --fuchsia-300: #f0abfc;
+  --fuchsia-400: #e879f9;
+  --fuchsia-500: #d946ef;
+  --fuchsia-600: #c026d3;
+  --fuchsia-700: #a21caf;
+  --fuchsia-800: #86198f;
+  --fuchsia-900: #701a75;
+  --fuchsia-950: #4a044e;
+  --pink-50: #fdf2f8;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+  --pink-800: #9d174d;
+  --pink-900: #831843;
+  --pink-950: #500724;
+  --rose-50: #fff1f2;
+  --rose-100: #ffe4e6;
+  --rose-200: #fecdd3;
+  --rose-300: #fda4af;
+  --rose-400: #fb7185;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+  --rose-700: #be123c;
+  --rose-800: #9f1239;
+  --rose-900: #881337;
+  --rose-950: #4c0519;
+  --background: hsl(var(--background));
+  --foreground-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --foreground: hsl(var(--foreground));
+  --divider: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --focus: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --overlay: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content1: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content1-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content2: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content2-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content3: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content3-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content4: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --content4-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --default: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --primary-foreground: hsl(var(--primary-foreground));
+  --primary: hsl(var(--primary));
+  --secondary-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --secondary-foreground: hsl(var(--secondary-foreground));
+  --secondary: hsl(var(--secondary));
+  --success-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --success: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --warning: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-50: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-100: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-200: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-300: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-400: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-500: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-600: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-700: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-800: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-900: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger-foreground: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --danger: ({ opacityVariable, opacityValue }) => {
+          if (!isNaN(+opacityValue)) {
+            return `hsl(var(${nextuiColorVariable}) / ${opacityValue})`;
+          }
+          if (opacityVariable) {
+            return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, var(${opacityVariable})))`;
+          }
+          return `hsl(var(${nextuiColorVariable}) / var(${nextuiOpacityVariable}, 1))`;
+        };
+  --border: hsl(var(--border));
+  --input: hsl(var(--input));
+  --ring: hsl(var(--ring));
+  --destructive: hsl(var(--destructive));
+  --destructive-foreground: hsl(var(--destructive-foreground));
+  --muted: hsl(var(--muted));
+  --muted-foreground: hsl(var(--muted-foreground));
+  --accent: hsl(var(--accent));
+  --accent-foreground: hsl(var(--accent-foreground));
+  --popover: hsl(var(--popover));
+  --popover-foreground: hsl(var(--popover-foreground));
+  --card: hsl(var(--card));
+  --card-foreground: hsl(var(--card-foreground));
+}
+
+:root, [data-theme] {
+  color: hsl(var(--nextui-foreground));
+  background-color: hsl(var(--nextui-background));
+}
   :root {
     --background: 240 5% 6%;
     --foreground: 60 5% 90%;
@@ -683,11 +1758,23 @@ video {
   white-space: nowrap;
   border-width: 0;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}
+.fixed {
+  position: fixed;
+}
 .absolute {
   position: absolute;
 }
 .relative {
   position: relative;
+}
+.-inset-\[10px\] {
+  inset: -10px;
 }
 .inset-0 {
   inset: 0px;
@@ -704,17 +1791,32 @@ video {
 .left-1\/2 {
   left: 50%;
 }
+.left-2 {
+  left: 0.5rem;
+}
 .right-0 {
   right: 0px;
 }
 .right-1\/2 {
   right: 50%;
 }
+.right-10 {
+  right: 2.5rem;
+}
+.right-2 {
+  right: 0.5rem;
+}
+.top-0 {
+  top: 0px;
+}
 .top-1\/2 {
   top: 50%;
 }
-.left-2 {
-  left: 0.5rem;
+.top-10 {
+  top: 2.5rem;
+}
+.top-2 {
+  top: 0.5rem;
 }
 .isolate {
   isolation: isolate;
@@ -734,23 +1836,35 @@ video {
 .z-50 {
   z-index: 50;
 }
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.z-\[100\] {
+  z-index: 100;
+}
+.\!m-0 {
+  margin: 0px !important;
 }
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
 .mr-2 {
   margin-right: 0.5rem;
-}
-.mt-10 {
-  margin-top: 2.5rem;
 }
 .mt-2 {
   margin-top: 0.5rem;
@@ -764,23 +1878,14 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
-.ml-2 {
-  margin-left: 0.5rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
-}
-.ml-auto {
-  margin-left: auto;
-}
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
@@ -803,6 +1908,15 @@ video {
 .h-11 {
   height: 2.75rem;
 }
+.h-2 {
+  height: 0.5rem;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-3\.5 {
+  height: 0.875rem;
+}
 .h-36 {
   height: 9rem;
 }
@@ -824,6 +1938,9 @@ video {
 .h-56 {
   height: 14rem;
 }
+.h-7 {
+  height: 1.75rem;
+}
 .h-8 {
   height: 2rem;
 }
@@ -833,23 +1950,29 @@ video {
 .h-\[100\%\] {
   height: 100%;
 }
-.h-screen {
+.h-\[100vh\] {
   height: 100vh;
 }
-.h-2 {
-  height: 0.5rem;
-}
-.h-3\.5 {
-  height: 0.875rem;
-}
-.h-px {
-  height: 1px;
+.h-\[60vh\] {
+  height: 60vh;
 }
 .h-\[var\(--radix-select-trigger-height\)\] {
   height: var(--radix-select-trigger-height);
 }
+.h-full {
+  height: 100%;
+}
+.h-px {
+  height: 1px;
+}
+.h-screen {
+  height: 100vh;
+}
 .max-h-96 {
   max-height: 24rem;
+}
+.max-h-screen {
+  max-height: 100vh;
 }
 .min-h-\[100dvh\] {
   min-height: 100dvh;
@@ -860,6 +1983,12 @@ video {
 .w-10 {
   width: 2.5rem;
 }
+.w-2 {
+  width: 0.5rem;
+}
+.w-3\.5 {
+  width: 0.875rem;
+}
 .w-4 {
   width: 1rem;
 }
@@ -869,8 +1998,14 @@ video {
 .w-5 {
   width: 1.25rem;
 }
+.w-6 {
+  width: 1.5rem;
+}
 .w-64 {
   width: 16rem;
+}
+.w-7 {
+  width: 1.75rem;
 }
 .w-8 {
   width: 2rem;
@@ -878,8 +2013,14 @@ video {
 .w-\[100\%\] {
   width: 100%;
 }
+.w-\[180px\] {
+  width: 180px;
+}
 .w-\[28rem\] {
   width: 28rem;
+}
+.w-\[300px\] {
+  width: 300px;
 }
 .w-\[30rem\] {
   width: 30rem;
@@ -887,32 +2028,26 @@ video {
 .w-full {
   width: 100%;
 }
-.w-56 {
-  width: 14rem;
-}
-.w-2 {
-  width: 0.5rem;
-}
-.w-3\.5 {
-  width: 0.875rem;
-}
-.w-\[180px\] {
-  width: 180px;
-}
 .min-w-\[8rem\] {
   min-width: 8rem;
 }
 .min-w-\[var\(--radix-select-trigger-width\)\] {
   min-width: var(--radix-select-trigger-width);
 }
-.max-w-xl {
-  max-width: 36rem;
+.max-w-7xl {
+  max-width: 80rem;
 }
 .max-w-md {
   max-width: 28rem;
 }
+.max-w-xl {
+  max-width: 36rem;
+}
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 .shrink-0 {
   flex-shrink: 0;
@@ -949,6 +2084,15 @@ video {
   --tw-scale-y: 1.25;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+@keyframes pulse {
+
+  50% {
+    opacity: .5;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 .cursor-default {
   cursor: default;
 }
@@ -968,11 +2112,23 @@ video {
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
 }
 .justify-center {
   justify-content: center;
@@ -980,11 +2136,20 @@ video {
 .justify-between {
   justify-content: space-between;
 }
-.gap-8 {
-  gap: 2rem;
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-10 {
+  gap: 2.5rem;
+}
+.gap-2 {
+  gap: 0.5rem;
 }
 .gap-4 {
   gap: 1rem;
+}
+.gap-8 {
+  gap: 2rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -996,10 +2161,10 @@ video {
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+  margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -1011,39 +2176,38 @@ video {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
-}
 .overflow-hidden {
   overflow: hidden;
 }
 .overflow-visible {
   overflow: visible;
 }
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
+.whitespace-pre {
+  white-space: pre;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-full {
   border-radius: 9999px;
+}
+.rounded-lg {
+  border-radius: var(--radius);
 }
 .rounded-md {
   border-radius: calc(var(--radius) - 2px);
 }
 .rounded-sm {
   border-radius: calc(var(--radius) - 4px);
-}
-.rounded {
-  border-radius: 0.25rem;
-}
-.rounded-lg {
-  border-radius: var(--radius);
 }
 .rounded-l-md {
   border-top-left-radius: calc(var(--radius) - 2px);
@@ -1053,14 +2217,40 @@ video {
   border-top-right-radius: calc(var(--radius) - 2px);
   border-bottom-right-radius: calc(var(--radius) - 2px);
 }
+.rounded-bl-sm {
+  border-bottom-left-radius: calc(var(--radius) - 4px);
+}
+.rounded-br-lg {
+  border-bottom-right-radius: var(--radius);
+}
+.rounded-tl-2xl {
+  border-top-left-radius: 1rem;
+}
+.rounded-tl-lg {
+  border-top-left-radius: var(--radius);
+}
+.rounded-tr-sm {
+  border-top-right-radius: calc(var(--radius) - 4px);
+}
 .border {
   border-width: 1px;
 }
 .border-t {
   border-top-width: 1px;
 }
+.border-input {
+  border-color: hsl(var(--input));
+}
 .border-muted {
   border-color: hsl(var(--muted));
+}
+.border-neutral-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 229 229 / var(--tw-border-opacity));
+}
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 .border-slate-200 {
   --tw-border-opacity: 1;
@@ -1070,11 +2260,12 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(15 23 42 / var(--tw-border-opacity));
 }
-.border-input {
-  border-color: hsl(var(--input));
-}
 .bg-background {
   background-color: hsl(var(--background));
+}
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 .bg-card {
   background-color: hsl(var(--card));
@@ -1087,8 +2278,16 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(6 182 212 / var(--tw-bg-opacity));
 }
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
 .bg-muted {
   background-color: hsl(var(--muted));
+}
+.bg-neutral-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 .bg-primary {
   background-color: hsl(var(--primary));
@@ -1116,9 +2315,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-black {
+.bg-zinc-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
 }
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
@@ -1158,11 +2357,23 @@ video {
 .fill-current {
   fill: currentColor;
 }
-.p-6 {
-  padding: 1.5rem;
+.\!p-0 {
+  padding: 0px !important;
 }
 .p-1 {
   padding: 0.25rem;
+}
+.p-10 {
+  padding: 2.5rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -1180,13 +2391,17 @@ video {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
 }
 .py-12 {
   padding-top: 3rem;
@@ -1204,25 +2419,24 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-.pt-0 {
-  padding-top: 0px;
-}
 .pl-8 {
   padding-left: 2rem;
 }
 .pr-2 {
   padding-right: 0.5rem;
 }
+.pr-8 {
+  padding-right: 2rem;
+}
+.pt-0 {
+  padding-top: 0px;
+}
 .text-center {
   text-align: center;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -1244,10 +2458,6 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1257,6 +2467,9 @@ video {
 }
 .font-medium {
   font-weight: 500;
+}
+.font-normal {
+  font-weight: 400;
 }
 .font-semibold {
   font-weight: 600;
@@ -1270,6 +2483,10 @@ video {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-current {
   color: currentColor;
 }
@@ -1278,6 +2495,14 @@ video {
 }
 .text-muted-foreground {
   color: hsl(var(--muted-foreground));
+}
+.text-neutral-700 {
+  --tw-text-opacity: 1;
+  color: rgb(64 64 64 / var(--tw-text-opacity));
+}
+.text-neutral-800 {
+  --tw-text-opacity: 1;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
 }
 .text-primary {
   color: hsl(var(--primary));
@@ -1289,9 +2514,20 @@ video {
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
 }
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
 .text-slate-900 {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+.text-slate-950 {
+  --tw-text-opacity: 1;
+  color: rgb(2 6 23 / var(--tw-text-opacity));
+}
+.text-slate-950\/50 {
+  color: rgb(2 6 23 / 0.5);
 }
 .text-transparent {
   color: transparent;
@@ -1299,17 +2535,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-slate-500 {
-  --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity));
-}
-.text-slate-950 {
-  --tw-text-opacity: 1;
-  color: rgb(2 6 23 / var(--tw-text-opacity));
-}
-.underline {
-  text-decoration-line: underline;
 }
 .underline-offset-4 {
   text-underline-offset: 4px;
@@ -1324,6 +2549,9 @@ video {
 .placeholder-muted-foreground::placeholder {
   color: hsl(var(--muted-foreground));
 }
+.opacity-0 {
+  opacity: 0;
+}
 .opacity-10 {
   opacity: 0.1;
 }
@@ -1333,10 +2561,8 @@ video {
 .opacity-60 {
   opacity: 0.6;
 }
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.opacity-90 {
+  opacity: 0.9;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -1346,6 +2572,11 @@ video {
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .outline-none {
@@ -1366,6 +2597,17 @@ video {
   --tw-blur: blur(64px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.blur-\[10px\] {
+  --tw-blur: blur(10px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .backdrop-blur-md {
   --tw-backdrop-blur: blur(12px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1376,12 +2618,28 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition-duration: 250ms;
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+.duration-150 {
   transition-duration: 150ms;
+}
+.will-change-transform {
+  will-change: transform;
 }
 @keyframes enter {
 
@@ -1397,11 +2655,270 @@ video {
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
 }
+.duration-150 {
+  animation-duration: 150ms;
+}
+:root,.light,[data-theme="light"] {
+  color-scheme: light;
+  --nextui-background: 0 0% 100%;
+  --nextui-foreground-50: 0 0% 98.04%;
+  --nextui-foreground-100: 240 4.76% 95.88%;
+  --nextui-foreground-200: 240 5.88% 90%;
+  --nextui-foreground-300: 240 4.88% 83.92%;
+  --nextui-foreground-400: 240 5.03% 64.9%;
+  --nextui-foreground-500: 240 3.83% 46.08%;
+  --nextui-foreground-600: 240 5.2% 33.92%;
+  --nextui-foreground-700: 240 5.26% 26.08%;
+  --nextui-foreground-800: 240 3.7% 15.88%;
+  --nextui-foreground-900: 240 5.88% 10%;
+  --nextui-foreground: 201.81999999999994 24.44% 8.82%;
+  --nextui-divider: 0 0% 6.67%;
+  --nextui-divider-opacity: 0.15;
+  --nextui-focus: 212.01999999999998 100% 46.67%;
+  --nextui-overlay: 0 0% 0%;
+  --nextui-content1: 0 0% 100%;
+  --nextui-content1-foreground: 201.81999999999994 24.44% 8.82%;
+  --nextui-content2: 240 4.76% 95.88%;
+  --nextui-content2-foreground: 240 3.7% 15.88%;
+  --nextui-content3: 240 5.88% 90%;
+  --nextui-content3-foreground: 240 5.26% 26.08%;
+  --nextui-content4: 240 4.88% 83.92%;
+  --nextui-content4-foreground: 240 5.2% 33.92%;
+  --nextui-default-50: 0 0% 98.04%;
+  --nextui-default-100: 240 4.76% 95.88%;
+  --nextui-default-200: 240 5.88% 90%;
+  --nextui-default-300: 240 4.88% 83.92%;
+  --nextui-default-400: 240 5.03% 64.9%;
+  --nextui-default-500: 240 3.83% 46.08%;
+  --nextui-default-600: 240 5.2% 33.92%;
+  --nextui-default-700: 240 5.26% 26.08%;
+  --nextui-default-800: 240 3.7% 15.88%;
+  --nextui-default-900: 240 5.88% 10%;
+  --nextui-default-foreground: 0 0% 0%;
+  --nextui-default: 240 4.88% 83.92%;
+  --nextui-primary-50: 212.5 92.31% 94.9%;
+  --nextui-primary-100: 211.84000000000003 92.45% 89.61%;
+  --nextui-primary-200: 211.84000000000003 92.45% 79.22%;
+  --nextui-primary-300: 212.24 92.45% 68.82%;
+  --nextui-primary-400: 212.14 92.45% 58.43%;
+  --nextui-primary-500: 212.01999999999998 100% 46.67%;
+  --nextui-primary-600: 212.14 100% 38.43%;
+  --nextui-primary-700: 212.24 100% 28.82%;
+  --nextui-primary-800: 211.84000000000003 100% 19.22%;
+  --nextui-primary-900: 211.84000000000003 100% 9.61%;
+  --nextui-primary-foreground: 0 0% 100%;
+  --nextui-primary: 212.01999999999998 100% 46.67%;
+  --nextui-secondary-50: 270 61.54% 94.9%;
+  --nextui-secondary-100: 270 59.26% 89.41%;
+  --nextui-secondary-200: 270 59.26% 78.82%;
+  --nextui-secondary-300: 270 59.26% 68.24%;
+  --nextui-secondary-400: 270 59.26% 57.65%;
+  --nextui-secondary-500: 270 66.67% 47.06%;
+  --nextui-secondary-600: 270 66.67% 37.65%;
+  --nextui-secondary-700: 270 66.67% 28.24%;
+  --nextui-secondary-800: 270 66.67% 18.82%;
+  --nextui-secondary-900: 270 66.67% 9.41%;
+  --nextui-secondary-foreground: 0 0% 100%;
+  --nextui-secondary: 270 66.67% 47.06%;
+  --nextui-success-50: 146.66999999999996 64.29% 94.51%;
+  --nextui-success-100: 145.71000000000004 61.4% 88.82%;
+  --nextui-success-200: 146.2 61.74% 77.45%;
+  --nextui-success-300: 145.78999999999996 62.57% 66.47%;
+  --nextui-success-400: 146.01 62.45% 55.1%;
+  --nextui-success-500: 145.96000000000004 79.46% 43.92%;
+  --nextui-success-600: 146.01 79.89% 35.1%;
+  --nextui-success-700: 145.78999999999996 79.26% 26.47%;
+  --nextui-success-800: 146.2 79.78% 17.45%;
+  --nextui-success-900: 145.71000000000004 77.78% 8.82%;
+  --nextui-success-foreground: 0 0% 0%;
+  --nextui-success: 145.96000000000004 79.46% 43.92%;
+  --nextui-warning-50: 54.55000000000001 91.67% 95.29%;
+  --nextui-warning-100: 37.139999999999986 91.3% 90.98%;
+  --nextui-warning-200: 37.139999999999986 91.3% 81.96%;
+  --nextui-warning-300: 36.95999999999998 91.24% 73.14%;
+  --nextui-warning-400: 37.00999999999999 91.26% 64.12%;
+  --nextui-warning-500: 37.02999999999997 91.27% 55.1%;
+  --nextui-warning-600: 37.00999999999999 74.22% 44.12%;
+  --nextui-warning-700: 36.95999999999998 73.96% 33.14%;
+  --nextui-warning-800: 37.139999999999986 75% 21.96%;
+  --nextui-warning-900: 37.139999999999986 75% 10.98%;
+  --nextui-warning-foreground: 0 0% 0%;
+  --nextui-warning: 37.02999999999997 91.27% 55.1%;
+  --nextui-danger-50: 339.13 92% 95.1%;
+  --nextui-danger-100: 340 91.84% 90.39%;
+  --nextui-danger-200: 339.3299999999999 90% 80.39%;
+  --nextui-danger-300: 339.11 90.6% 70.78%;
+  --nextui-danger-400: 339 90% 60.78%;
+  --nextui-danger-500: 339.20000000000005 90.36% 51.18%;
+  --nextui-danger-600: 339 86.54% 40.78%;
+  --nextui-danger-700: 339.11 85.99% 30.78%;
+  --nextui-danger-800: 339.3299999999999 86.54% 20.39%;
+  --nextui-danger-900: 340 84.91% 10.39%;
+  --nextui-danger-foreground: 0 0% 100%;
+  --nextui-danger: 339.20000000000005 90.36% 51.18%;
+  --nextui-divider-weight: 1px;
+  --nextui-disabled-opacity: .5;
+  --nextui-font-size-tiny: 0.75rem;
+  --nextui-font-size-small: 0.875rem;
+  --nextui-font-size-medium: 1rem;
+  --nextui-font-size-large: 1.125rem;
+  --nextui-line-height-tiny: 1rem;
+  --nextui-line-height-small: 1.25rem;
+  --nextui-line-height-medium: 1.5rem;
+  --nextui-line-height-large: 1.75rem;
+  --nextui-radius-small: 8px;
+  --nextui-radius-medium: 12px;
+  --nextui-radius-large: 14px;
+  --nextui-border-width-small: 1px;
+  --nextui-border-width-medium: 2px;
+  --nextui-border-width-large: 3px;
+  --nextui-box-shadow-small: 0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3);
+  --nextui-box-shadow-medium: 0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3);
+  --nextui-box-shadow-large: 0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3);
+  --nextui-hover-opacity: .8;
+}
+.dark,[data-theme="dark"] {
+  color-scheme: dark;
+  --nextui-background: 0 0% 0%;
+  --nextui-foreground-50: 240 5.88% 10%;
+  --nextui-foreground-100: 240 3.7% 15.88%;
+  --nextui-foreground-200: 240 5.26% 26.08%;
+  --nextui-foreground-300: 240 5.2% 33.92%;
+  --nextui-foreground-400: 240 3.83% 46.08%;
+  --nextui-foreground-500: 240 5.03% 64.9%;
+  --nextui-foreground-600: 240 4.88% 83.92%;
+  --nextui-foreground-700: 240 5.88% 90%;
+  --nextui-foreground-800: 240 4.76% 95.88%;
+  --nextui-foreground-900: 0 0% 98.04%;
+  --nextui-foreground: 210 5.56% 92.94%;
+  --nextui-focus: 212.01999999999998 100% 46.67%;
+  --nextui-overlay: 0 0% 0%;
+  --nextui-divider: 0 0% 100%;
+  --nextui-divider-opacity: 0.15;
+  --nextui-content1: 240 5.88% 10%;
+  --nextui-content1-foreground: 0 0% 98.04%;
+  --nextui-content2: 240 3.7% 15.88%;
+  --nextui-content2-foreground: 240 4.76% 95.88%;
+  --nextui-content3: 240 5.26% 26.08%;
+  --nextui-content3-foreground: 240 5.88% 90%;
+  --nextui-content4: 240 5.2% 33.92%;
+  --nextui-content4-foreground: 240 4.88% 83.92%;
+  --nextui-default-50: 240 5.88% 10%;
+  --nextui-default-100: 240 3.7% 15.88%;
+  --nextui-default-200: 240 5.26% 26.08%;
+  --nextui-default-300: 240 5.2% 33.92%;
+  --nextui-default-400: 240 3.83% 46.08%;
+  --nextui-default-500: 240 5.03% 64.9%;
+  --nextui-default-600: 240 4.88% 83.92%;
+  --nextui-default-700: 240 5.88% 90%;
+  --nextui-default-800: 240 4.76% 95.88%;
+  --nextui-default-900: 0 0% 98.04%;
+  --nextui-default-foreground: 0 0% 100%;
+  --nextui-default: 240 5.26% 26.08%;
+  --nextui-primary-50: 211.84000000000003 100% 9.61%;
+  --nextui-primary-100: 211.84000000000003 100% 19.22%;
+  --nextui-primary-200: 212.24 100% 28.82%;
+  --nextui-primary-300: 212.14 100% 38.43%;
+  --nextui-primary-400: 212.01999999999998 100% 46.67%;
+  --nextui-primary-500: 212.14 92.45% 58.43%;
+  --nextui-primary-600: 212.24 92.45% 68.82%;
+  --nextui-primary-700: 211.84000000000003 92.45% 79.22%;
+  --nextui-primary-800: 211.84000000000003 92.45% 89.61%;
+  --nextui-primary-900: 212.5 92.31% 94.9%;
+  --nextui-primary-foreground: 0 0% 100%;
+  --nextui-primary: 212.01999999999998 100% 46.67%;
+  --nextui-secondary-50: 270 66.67% 9.41%;
+  --nextui-secondary-100: 270 66.67% 18.82%;
+  --nextui-secondary-200: 270 66.67% 28.24%;
+  --nextui-secondary-300: 270 66.67% 37.65%;
+  --nextui-secondary-400: 270 66.67% 47.06%;
+  --nextui-secondary-500: 270 59.26% 57.65%;
+  --nextui-secondary-600: 270 59.26% 68.24%;
+  --nextui-secondary-700: 270 59.26% 78.82%;
+  --nextui-secondary-800: 270 59.26% 89.41%;
+  --nextui-secondary-900: 270 61.54% 94.9%;
+  --nextui-secondary-foreground: 0 0% 100%;
+  --nextui-secondary: 270 59.26% 57.65%;
+  --nextui-success-50: 145.71000000000004 77.78% 8.82%;
+  --nextui-success-100: 146.2 79.78% 17.45%;
+  --nextui-success-200: 145.78999999999996 79.26% 26.47%;
+  --nextui-success-300: 146.01 79.89% 35.1%;
+  --nextui-success-400: 145.96000000000004 79.46% 43.92%;
+  --nextui-success-500: 146.01 62.45% 55.1%;
+  --nextui-success-600: 145.78999999999996 62.57% 66.47%;
+  --nextui-success-700: 146.2 61.74% 77.45%;
+  --nextui-success-800: 145.71000000000004 61.4% 88.82%;
+  --nextui-success-900: 146.66999999999996 64.29% 94.51%;
+  --nextui-success-foreground: 0 0% 0%;
+  --nextui-success: 145.96000000000004 79.46% 43.92%;
+  --nextui-warning-50: 37.139999999999986 75% 10.98%;
+  --nextui-warning-100: 37.139999999999986 75% 21.96%;
+  --nextui-warning-200: 36.95999999999998 73.96% 33.14%;
+  --nextui-warning-300: 37.00999999999999 74.22% 44.12%;
+  --nextui-warning-400: 37.02999999999997 91.27% 55.1%;
+  --nextui-warning-500: 37.00999999999999 91.26% 64.12%;
+  --nextui-warning-600: 36.95999999999998 91.24% 73.14%;
+  --nextui-warning-700: 37.139999999999986 91.3% 81.96%;
+  --nextui-warning-800: 37.139999999999986 91.3% 90.98%;
+  --nextui-warning-900: 54.55000000000001 91.67% 95.29%;
+  --nextui-warning-foreground: 0 0% 0%;
+  --nextui-warning: 37.02999999999997 91.27% 55.1%;
+  --nextui-danger-50: 340 84.91% 10.39%;
+  --nextui-danger-100: 339.3299999999999 86.54% 20.39%;
+  --nextui-danger-200: 339.11 85.99% 30.78%;
+  --nextui-danger-300: 339 86.54% 40.78%;
+  --nextui-danger-400: 339.20000000000005 90.36% 51.18%;
+  --nextui-danger-500: 339 90% 60.78%;
+  --nextui-danger-600: 339.11 90.6% 70.78%;
+  --nextui-danger-700: 339.3299999999999 90% 80.39%;
+  --nextui-danger-800: 340 91.84% 90.39%;
+  --nextui-danger-900: 339.13 92% 95.1%;
+  --nextui-danger-foreground: 0 0% 100%;
+  --nextui-danger: 339.20000000000005 90.36% 51.18%;
+  --nextui-divider-weight: 1px;
+  --nextui-disabled-opacity: .5;
+  --nextui-font-size-tiny: 0.75rem;
+  --nextui-font-size-small: 0.875rem;
+  --nextui-font-size-medium: 1rem;
+  --nextui-font-size-large: 1.125rem;
+  --nextui-line-height-tiny: 1rem;
+  --nextui-line-height-small: 1.25rem;
+  --nextui-line-height-medium: 1.5rem;
+  --nextui-line-height-large: 1.75rem;
+  --nextui-radius-small: 8px;
+  --nextui-radius-medium: 12px;
+  --nextui-radius-large: 14px;
+  --nextui-border-width-small: 1px;
+  --nextui-border-width-medium: 2px;
+  --nextui-border-width-large: 3px;
+  --nextui-box-shadow-small: 0px 0px 5px 0px rgb(0 0 0 / 0.05), 0px 2px 10px 0px rgb(0 0 0 / 0.2), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15);
+  --nextui-box-shadow-medium: 0px 0px 15px 0px rgb(0 0 0 / 0.06), 0px 2px 30px 0px rgb(0 0 0 / 0.22), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15);
+  --nextui-box-shadow-large: 0px 0px 30px 0px rgb(0 0 0 / 0.07), 0px 30px 60px 0px rgb(0 0 0 / 0.26), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15);
+  --nextui-hover-opacity: .9;
+}
+.\[--aurora\:repeating-linear-gradient\(100deg\2c var\(--blue-500\)_10\%\2c var\(--indigo-300\)_15\%\2c var\(--blue-300\)_20\%\2c var\(--violet-200\)_25\%\2c var\(--blue-400\)_30\%\)\] {
+  --aurora: repeating-linear-gradient(100deg,var(--blue-500) 10%,var(--indigo-300) 15%,var(--blue-300) 20%,var(--violet-200) 25%,var(--blue-400) 30%);
+}
 .\[--conic-position\:from_290deg_at_center_top\] {
   --conic-position: from 290deg at center top;
 }
 .\[--conic-position\:from_70deg_at_center_top\] {
   --conic-position: from 70deg at center top;
+}
+.\[--dark-gradient\:repeating-linear-gradient\(100deg\2c var\(--black\)_0\%\2c var\(--black\)_7\%\2c var\(--transparent\)_10\%\2c var\(--transparent\)_12\%\2c var\(--black\)_16\%\)\] {
+  --dark-gradient: repeating-linear-gradient(100deg,var(--black) 0%,var(--black) 7%,var(--transparent) 10%,var(--transparent) 12%,var(--black) 16%);
+}
+.\[--white-gradient\:repeating-linear-gradient\(100deg\2c var\(--white\)_0\%\2c var\(--white\)_7\%\2c var\(--transparent\)_10\%\2c var\(--transparent\)_12\%\2c var\(--white\)_16\%\)\] {
+  --white-gradient: repeating-linear-gradient(100deg,var(--white) 0%,var(--white) 7%,var(--transparent) 10%,var(--transparent) 12%,var(--white) 16%);
+}
+.\[background-image\:var\(--white-gradient\)\2c var\(--aurora\)\] {
+  background-image: var(--white-gradient),var(--aurora);
+}
+.\[background-position\:50\%_50\%\2c 50\%_50\%\] {
+  background-position: 50% 50%,50% 50%;
+}
+.\[background-size\:300\%\2c _200\%\] {
+  background-size: 300%, 200%;
 }
 .\[mask-image\:linear-gradient\(to_left\2c white\2c transparent\)\] {
   -webkit-mask-image: linear-gradient(to left,white,transparent);
@@ -1414,6 +2931,10 @@ video {
 .\[mask-image\:linear-gradient\(to_top\2c white\2c transparent\)\] {
   -webkit-mask-image: linear-gradient(to top,white,transparent);
           mask-image: linear-gradient(to top,white,transparent);
+}
+.\[mask-image\:radial-gradient\(ellipse_at_100\%_0\%\2c black_10\%\2c var\(--transparent\)_70\%\)\] {
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%,black 10%,var(--transparent) 70%);
+          mask-image: radial-gradient(ellipse at 100% 0%,black 10%,var(--transparent) 70%);
 }
 
 .file\:border-0::file-selector-button {
@@ -1443,6 +2964,188 @@ video {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
+.after\:absolute::after {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.after\:inset-0::after {
+  content: var(--tw-content);
+  inset: 0px;
+}
+
+@keyframes aurora {
+
+  from {
+    content: var(--tw-content);
+    background-position: 50% 50%, 50% 50%;
+  }
+
+  to {
+    content: var(--tw-content);
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.after\:animate-aurora::after {
+  content: var(--tw-content);
+  animation: aurora 60s linear infinite;
+}
+
+.after\:mix-blend-difference::after {
+  content: var(--tw-content);
+  mix-blend-mode: difference;
+}
+
+.after\:content-\[\"\"\]::after {
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+.after\:dark::after {
+  content: var(--tw-content);
+  color-scheme: dark;
+  --nextui-background: 0 0% 0%;
+  --nextui-foreground-50: 240 5.88% 10%;
+  --nextui-foreground-100: 240 3.7% 15.88%;
+  --nextui-foreground-200: 240 5.26% 26.08%;
+  --nextui-foreground-300: 240 5.2% 33.92%;
+  --nextui-foreground-400: 240 3.83% 46.08%;
+  --nextui-foreground-500: 240 5.03% 64.9%;
+  --nextui-foreground-600: 240 4.88% 83.92%;
+  --nextui-foreground-700: 240 5.88% 90%;
+  --nextui-foreground-800: 240 4.76% 95.88%;
+  --nextui-foreground-900: 0 0% 98.04%;
+  --nextui-foreground: 210 5.56% 92.94%;
+  --nextui-focus: 212.01999999999998 100% 46.67%;
+  --nextui-overlay: 0 0% 0%;
+  --nextui-divider: 0 0% 100%;
+  --nextui-divider-opacity: 0.15;
+  --nextui-content1: 240 5.88% 10%;
+  --nextui-content1-foreground: 0 0% 98.04%;
+  --nextui-content2: 240 3.7% 15.88%;
+  --nextui-content2-foreground: 240 4.76% 95.88%;
+  --nextui-content3: 240 5.26% 26.08%;
+  --nextui-content3-foreground: 240 5.88% 90%;
+  --nextui-content4: 240 5.2% 33.92%;
+  --nextui-content4-foreground: 240 4.88% 83.92%;
+  --nextui-default-50: 240 5.88% 10%;
+  --nextui-default-100: 240 3.7% 15.88%;
+  --nextui-default-200: 240 5.26% 26.08%;
+  --nextui-default-300: 240 5.2% 33.92%;
+  --nextui-default-400: 240 3.83% 46.08%;
+  --nextui-default-500: 240 5.03% 64.9%;
+  --nextui-default-600: 240 4.88% 83.92%;
+  --nextui-default-700: 240 5.88% 90%;
+  --nextui-default-800: 240 4.76% 95.88%;
+  --nextui-default-900: 0 0% 98.04%;
+  --nextui-default-foreground: 0 0% 100%;
+  --nextui-default: 240 5.26% 26.08%;
+  --nextui-primary-50: 211.84000000000003 100% 9.61%;
+  --nextui-primary-100: 211.84000000000003 100% 19.22%;
+  --nextui-primary-200: 212.24 100% 28.82%;
+  --nextui-primary-300: 212.14 100% 38.43%;
+  --nextui-primary-400: 212.01999999999998 100% 46.67%;
+  --nextui-primary-500: 212.14 92.45% 58.43%;
+  --nextui-primary-600: 212.24 92.45% 68.82%;
+  --nextui-primary-700: 211.84000000000003 92.45% 79.22%;
+  --nextui-primary-800: 211.84000000000003 92.45% 89.61%;
+  --nextui-primary-900: 212.5 92.31% 94.9%;
+  --nextui-primary-foreground: 0 0% 100%;
+  --nextui-primary: 212.01999999999998 100% 46.67%;
+  --nextui-secondary-50: 270 66.67% 9.41%;
+  --nextui-secondary-100: 270 66.67% 18.82%;
+  --nextui-secondary-200: 270 66.67% 28.24%;
+  --nextui-secondary-300: 270 66.67% 37.65%;
+  --nextui-secondary-400: 270 66.67% 47.06%;
+  --nextui-secondary-500: 270 59.26% 57.65%;
+  --nextui-secondary-600: 270 59.26% 68.24%;
+  --nextui-secondary-700: 270 59.26% 78.82%;
+  --nextui-secondary-800: 270 59.26% 89.41%;
+  --nextui-secondary-900: 270 61.54% 94.9%;
+  --nextui-secondary-foreground: 0 0% 100%;
+  --nextui-secondary: 270 59.26% 57.65%;
+  --nextui-success-50: 145.71000000000004 77.78% 8.82%;
+  --nextui-success-100: 146.2 79.78% 17.45%;
+  --nextui-success-200: 145.78999999999996 79.26% 26.47%;
+  --nextui-success-300: 146.01 79.89% 35.1%;
+  --nextui-success-400: 145.96000000000004 79.46% 43.92%;
+  --nextui-success-500: 146.01 62.45% 55.1%;
+  --nextui-success-600: 145.78999999999996 62.57% 66.47%;
+  --nextui-success-700: 146.2 61.74% 77.45%;
+  --nextui-success-800: 145.71000000000004 61.4% 88.82%;
+  --nextui-success-900: 146.66999999999996 64.29% 94.51%;
+  --nextui-success-foreground: 0 0% 0%;
+  --nextui-success: 145.96000000000004 79.46% 43.92%;
+  --nextui-warning-50: 37.139999999999986 75% 10.98%;
+  --nextui-warning-100: 37.139999999999986 75% 21.96%;
+  --nextui-warning-200: 36.95999999999998 73.96% 33.14%;
+  --nextui-warning-300: 37.00999999999999 74.22% 44.12%;
+  --nextui-warning-400: 37.02999999999997 91.27% 55.1%;
+  --nextui-warning-500: 37.00999999999999 91.26% 64.12%;
+  --nextui-warning-600: 36.95999999999998 91.24% 73.14%;
+  --nextui-warning-700: 37.139999999999986 91.3% 81.96%;
+  --nextui-warning-800: 37.139999999999986 91.3% 90.98%;
+  --nextui-warning-900: 54.55000000000001 91.67% 95.29%;
+  --nextui-warning-foreground: 0 0% 0%;
+  --nextui-warning: 37.02999999999997 91.27% 55.1%;
+  --nextui-danger-50: 340 84.91% 10.39%;
+  --nextui-danger-100: 339.3299999999999 86.54% 20.39%;
+  --nextui-danger-200: 339.11 85.99% 30.78%;
+  --nextui-danger-300: 339 86.54% 40.78%;
+  --nextui-danger-400: 339.20000000000005 90.36% 51.18%;
+  --nextui-danger-500: 339 90% 60.78%;
+  --nextui-danger-600: 339.11 90.6% 70.78%;
+  --nextui-danger-700: 339.3299999999999 90% 80.39%;
+  --nextui-danger-800: 340 91.84% 90.39%;
+  --nextui-danger-900: 339.13 92% 95.1%;
+  --nextui-danger-foreground: 0 0% 100%;
+  --nextui-danger: 339.20000000000005 90.36% 51.18%;
+  --nextui-divider-weight: 1px;
+  --nextui-disabled-opacity: .5;
+  --nextui-font-size-tiny: 0.75rem;
+  --nextui-font-size-small: 0.875rem;
+  --nextui-font-size-medium: 1rem;
+  --nextui-font-size-large: 1.125rem;
+  --nextui-line-height-tiny: 1rem;
+  --nextui-line-height-small: 1.25rem;
+  --nextui-line-height-medium: 1.5rem;
+  --nextui-line-height-large: 1.75rem;
+  --nextui-radius-small: 8px;
+  --nextui-radius-medium: 12px;
+  --nextui-radius-large: 14px;
+  --nextui-border-width-small: 1px;
+  --nextui-border-width-medium: 2px;
+  --nextui-border-width-large: 3px;
+  --nextui-box-shadow-small: 0px 0px 5px 0px rgb(0 0 0 / 0.05), 0px 2px 10px 0px rgb(0 0 0 / 0.2), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15);
+  --nextui-box-shadow-medium: 0px 0px 15px 0px rgb(0 0 0 / 0.06), 0px 2px 30px 0px rgb(0 0 0 / 0.22), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15);
+  --nextui-box-shadow-large: 0px 0px 30px 0px rgb(0 0 0 / 0.07), 0px 30px 60px 0px rgb(0 0 0 / 0.26), inset 0px 0px 1px 0px rgb(255 255 255 / 0.15);
+  --nextui-hover-opacity: .9;
+}
+
+.after\:\[background-attachment\:fixed\]::after {
+  content: var(--tw-content);
+  background-attachment: fixed;
+}
+
+.after\:\[background-image\:var\(--white-gradient\)\2c var\(--aurora\)\]::after {
+  content: var(--tw-content);
+  background-image: var(--white-gradient),var(--aurora);
+}
+
+.after\:\[background-size\:200\%\2c _100\%\]::after {
+  content: var(--tw-content);
+  background-size: 200%, 100%;
+}
+
+.hover\:bg-muted:hover {
+  background-color: hsl(var(--muted));
+}
+
+.hover\:bg-primary\/90:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
 .hover\:bg-red-500\/90:hover {
   background-color: rgb(239 68 68 / 0.9);
 }
@@ -1460,12 +3163,12 @@ video {
   background-color: rgb(15 23 42 / 0.9);
 }
 
-.hover\:bg-muted:hover {
-  background-color: hsl(var(--muted));
+.hover\:text-muted-foreground:hover {
+  color: hsl(var(--muted-foreground));
 }
 
-.hover\:bg-primary\/90:hover {
-  background-color: hsl(var(--primary) / 0.9);
+.hover\:text-primary\/80:hover {
+  color: hsl(var(--primary) / 0.8);
 }
 
 .hover\:text-slate-900:hover {
@@ -1473,12 +3176,9 @@ video {
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
-.hover\:text-muted-foreground:hover {
-  color: hsl(var(--muted-foreground));
-}
-
-.hover\:text-primary\/80:hover {
-  color: hsl(var(--primary) / 0.8);
+.hover\:text-slate-950:hover {
+  --tw-text-opacity: 1;
+  color: rgb(2 6 23 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -1501,6 +3201,10 @@ video {
 .focus\:text-slate-900:focus {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
+.focus\:opacity-100:focus {
+  opacity: 1;
 }
 
 .focus\:outline-none:focus {
@@ -1563,6 +3267,57 @@ video {
   opacity: 0.5;
 }
 
+.group\/sidebar:hover .group-hover\/sidebar\:translate-x-1 {
+  --tw-translate-x: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+.group.destructive .group-\[\.destructive\]\:border-slate-100\/40 {
+  border-color: rgb(241 245 249 / 0.4);
+}
+
+.group.destructive .group-\[\.destructive\]\:text-red-300 {
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}
+
+.group.destructive .group-\[\.destructive\]\:hover\:border-red-500\/30:hover {
+  border-color: rgb(239 68 68 / 0.3);
+}
+
+.group.destructive .group-\[\.destructive\]\:hover\:bg-red-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.group.destructive .group-\[\.destructive\]\:hover\:text-red-50:hover {
+  --tw-text-opacity: 1;
+  color: rgb(254 242 242 / var(--tw-text-opacity));
+}
+
+.group.destructive .group-\[\.destructive\]\:hover\:text-slate-50:hover {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity));
+}
+
+.group.destructive .group-\[\.destructive\]\:focus\:ring-red-400:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(248 113 113 / var(--tw-ring-opacity));
+}
+
+.group.destructive .group-\[\.destructive\]\:focus\:ring-red-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
+}
+
+.group.destructive .group-\[\.destructive\]\:focus\:ring-offset-red-600:focus {
+  --tw-ring-offset-color: #dc2626;
+}
+
 .peer:disabled ~ .peer-disabled\:cursor-not-allowed {
   cursor: not-allowed;
 }
@@ -1595,6 +3350,21 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.data-\[swipe\=cancel\]\:translate-x-0[data-swipe="cancel"] {
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.data-\[swipe\=end\]\:translate-x-\[var\(--radix-toast-swipe-end-x\)\][data-swipe="end"] {
+  --tw-translate-x: var(--radix-toast-swipe-end-x);
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.data-\[swipe\=move\]\:translate-x-\[var\(--radix-toast-swipe-move-x\)\][data-swipe="move"] {
+  --tw-translate-x: var(--radix-toast-swipe-move-x);
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .data-\[state\=checked\]\:bg-slate-900[data-state="checked"] {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
@@ -1614,9 +3384,13 @@ video {
   opacity: 0.5;
 }
 
+.data-\[swipe\=move\]\:transition-none[data-swipe="move"] {
+  transition-property: none;
+}
+
 .data-\[state\=open\]\:animate-in[data-state="open"] {
   animation-name: enter;
-  animation-duration: 150ms;
+  animation-duration: 250ms;
   --tw-enter-opacity: initial;
   --tw-enter-scale: initial;
   --tw-enter-rotate: initial;
@@ -1626,7 +3400,17 @@ video {
 
 .data-\[state\=closed\]\:animate-out[data-state="closed"] {
   animation-name: exit;
-  animation-duration: 150ms;
+  animation-duration: 250ms;
+  --tw-exit-opacity: initial;
+  --tw-exit-scale: initial;
+  --tw-exit-rotate: initial;
+  --tw-exit-translate-x: initial;
+  --tw-exit-translate-y: initial;
+}
+
+.data-\[swipe\=end\]\:animate-out[data-swipe="end"] {
+  animation-name: exit;
+  animation-duration: 250ms;
   --tw-exit-opacity: initial;
   --tw-exit-scale: initial;
   --tw-exit-rotate: initial;
@@ -1636,6 +3420,10 @@ video {
 
 .data-\[state\=closed\]\:fade-out-0[data-state="closed"] {
   --tw-exit-opacity: 0;
+}
+
+.data-\[state\=closed\]\:fade-out-80[data-state="closed"] {
+  --tw-exit-opacity: 0.8;
 }
 
 .data-\[state\=open\]\:fade-in-0[data-state="open"] {
@@ -1666,6 +3454,24 @@ video {
   --tw-enter-translate-y: 0.5rem;
 }
 
+.data-\[state\=closed\]\:slide-out-to-right-full[data-state="closed"] {
+  --tw-exit-translate-x: 100%;
+}
+
+.data-\[state\=open\]\:slide-in-from-top-full[data-state="open"] {
+  --tw-enter-translate-y: -100%;
+}
+
+.dark\:border-neutral-700:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(64 64 64 / var(--tw-border-opacity));
+}
+
+.dark\:border-red-900:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(127 29 29 / var(--tw-border-opacity));
+}
+
 .dark\:border-slate-50:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(248 250 252 / var(--tw-border-opacity));
@@ -1674,6 +3480,16 @@ video {
 .dark\:border-slate-800:is(.dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(30 41 59 / var(--tw-border-opacity));
+}
+
+.dark\:bg-neutral-800:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+}
+
+.dark\:bg-neutral-900:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 
 .dark\:bg-red-900:is(.dark *) {
@@ -1696,14 +3512,19 @@ video {
   background-color: rgb(2 6 23 / var(--tw-bg-opacity));
 }
 
-.dark\:text-slate-50:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity));
+.dark\:bg-white:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.dark\:text-slate-900:is(.dark *) {
+.dark\:bg-zinc-900:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+
+.dark\:text-neutral-200:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
+  color: rgb(229 229 229 / var(--tw-text-opacity));
 }
 
 .dark\:text-slate-400:is(.dark *) {
@@ -1711,8 +3532,36 @@ video {
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
+.dark\:text-slate-50:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity));
+}
+
+.dark\:text-slate-50\/50:is(.dark *) {
+  color: rgb(248 250 252 / 0.5);
+}
+
+.dark\:text-slate-900:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
+.dark\:text-white:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .dark\:ring-offset-slate-950:is(.dark *) {
   --tw-ring-offset-color: #020617;
+}
+
+.dark\:invert-0:is(.dark *) {
+  --tw-invert: invert(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.dark\:\[background-image\:var\(--dark-gradient\)\2c var\(--aurora\)\]:is(.dark *) {
+  background-image: var(--dark-gradient),var(--aurora);
 }
 
 .dark\:placeholder\:text-slate-400:is(.dark *)::-moz-placeholder {
@@ -1723,6 +3572,11 @@ video {
 .dark\:placeholder\:text-slate-400:is(.dark *)::placeholder {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.after\:dark\:\[background-image\:var\(--dark-gradient\)\2c var\(--aurora\)\]:is(.dark *)::after {
+  content: var(--tw-content);
+  background-image: var(--dark-gradient),var(--aurora);
 }
 
 .dark\:hover\:bg-red-900\/90:hover:is(.dark *) {
@@ -1767,6 +3621,29 @@ video {
   --tw-ring-color: rgb(203 213 225 / var(--tw-ring-opacity));
 }
 
+.group.destructive .dark\:group-\[\.destructive\]\:border-slate-800\/40:is(.dark *) {
+  border-color: rgb(30 41 59 / 0.4);
+}
+
+.group.destructive .dark\:group-\[\.destructive\]\:hover\:border-red-900\/30:hover:is(.dark *) {
+  border-color: rgb(127 29 29 / 0.3);
+}
+
+.group.destructive .dark\:group-\[\.destructive\]\:hover\:bg-red-900:hover:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+
+.group.destructive .dark\:group-\[\.destructive\]\:hover\:text-slate-50:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity));
+}
+
+.group.destructive .dark\:group-\[\.destructive\]\:focus\:ring-red-900:focus:is(.dark *) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(127 29 29 / var(--tw-ring-opacity));
+}
+
 .dark\:data-\[state\=checked\]\:bg-slate-50[data-state="checked"]:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
@@ -1784,9 +3661,16 @@ video {
 
 @media (min-width: 640px) {
 
-  .sm\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+  .sm\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .sm\:right-0 {
+    right: 0px;
+  }
+
+  .sm\:top-auto {
+    top: auto;
   }
 
   .sm\:mt-0 {
@@ -1801,24 +3685,16 @@ video {
     display: flex;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
-  .sm\:max-w-\[480px\] {
-    max-width: 480px;
-  }
-
-  .sm\:max-w-md {
-    max-width: 28rem;
-  }
-
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
   }
 
   .sm\:px-6 {
@@ -1841,18 +3717,46 @@ video {
     line-height: 1;
   }
 
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+  .data-\[state\=open\]\:sm\:slide-in-from-bottom-full[data-state="open"] {
+    --tw-enter-translate-y: 100%;
   }
 }
 
 @media (min-width: 768px) {
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:max-w-\[420px\] {
+    max-width: 420px;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:p-10 {
+    padding: 2.5rem;
+  }
 
   .md\:text-7xl {
     font-size: 4.5rem;
