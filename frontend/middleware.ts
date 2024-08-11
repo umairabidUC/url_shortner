@@ -4,7 +4,7 @@ import { getAccessToken } from '@/../utils/tokenStorage';
 
 export function middleware(request: NextRequest) {
   const accessToken = request.cookies.get('accessToken')?.value;
-
+  console.log("MIDDLEWARE!!!")
   if (!accessToken) {
     return NextResponse.redirect(new URL('/signin', request.url));
   }

@@ -1,7 +1,8 @@
 import { Manrope } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import Provider from '@/lib/Provider'
-
+import  Sidebar  from './components/Sidebar'
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 const fontHeading = Manrope({
   subsets: ['latin'],
   display: 'swap',
@@ -28,7 +29,11 @@ export default function Layout({ children }: Readonly<{
       >
         
         <Provider>
-        {children}
+        <AntdRegistry>
+        <Sidebar>
+          {children}
+         </Sidebar>
+         </AntdRegistry>
         </Provider>
         
       </body>
