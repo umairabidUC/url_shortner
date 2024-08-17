@@ -4,7 +4,7 @@ import { LoggerService } from './logger.service';
 
 @Injectable()
 export class LoggerInterceptor implements NestInterceptor {
-  constructor(private readonly loggerService: LoggerService) {}
+  constructor(private readonly loggerService: LoggerService) { }
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const request = context.switchToHttp().getRequest();
@@ -19,7 +19,6 @@ export class LoggerInterceptor implements NestInterceptor {
     const { method, url, headers } = request;
     const userAgent = headers['user-agent'];
     const host = headers['host'];
-    console.log("Interceptor")
     this.loggerService.log(
       `Request - ${method} ${url} - Host: ${host} - User-Agent: ${userAgent}`,
       'Request'

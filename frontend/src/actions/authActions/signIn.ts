@@ -1,8 +1,7 @@
 "use server";
 import axios from 'axios';
 import { setAccessToken } from '@/../utils/tokenStorage';
-import { redirect } from 'next/navigation';
-
+import { jwtDecode } from "jwt-decode"
 export async function signInAction(data: { email: string; password: string }) {
   try {
     const response = await axios.post('http://localhost:3500/auth/signin', {
@@ -12,7 +11,10 @@ export async function signInAction(data: { email: string; password: string }) {
     if (response.data.result.access_token) {
       console.log("REACHED HERE ACCESS TOKEN: ", response.data.result.access_token)
       setAccessToken(response.data.result.access_token);
-      return {error: null}
+      const decode = jwtDecode(response.data.result.access_token)
+      console.log("PAYLOAD", decode)
+
+      return { error: null, decode }
     } else {
       return { error: 'Authentication failed' };
     }

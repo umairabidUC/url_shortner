@@ -1,14 +1,5 @@
 {
-  "node": {
-    "85b3be86dbf4a4fa47988801543e87438d5cdd94": {
-      "workers": {
-        "app/(auth)/signin/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fumair%2Furl_shortner%2Ffrontend%2Fsrc%2Factions%2FauthActions%2FsignIn.ts%22%2C%5B%22signInAction%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/(auth)/signin/page": "action-browser"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
-  "encryptionKey": "YrWi+U+hgD9LYzrHRq9F8P/Rlwfco58cCuHgB5YxMoo="
+  "encryptionKey": "adaLAEw+P5tK2hq+yQYmCz/bRcPVjh1ZSPBAaYoGMmQ="
 }

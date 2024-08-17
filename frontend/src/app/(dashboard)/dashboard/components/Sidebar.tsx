@@ -33,16 +33,16 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Dashboard', '/dashboard',"/dashboard",<DesktopOutlined /> ),
-  getItem('Url Management', '/dashboard/urls',"/urls", <RiLinksFill />),
-  getItem('User', '3', '/users',<UserOutlined />),
-  getItem('Url Stats', '4', '/settings',<MdQueryStats />),
+  getItem('Dashboard', '/dashboard', "/dashboard", <DesktopOutlined />),
+  getItem('Url Management', '/dashboard/urls', "/urls", <RiLinksFill />),
+  getItem('Pre-Generated Urls', '/dashboard/pregen', '/users', <UserOutlined />),
+  getItem('Logo', '/dashboard/logo', '/logo', <MdQueryStats />),
 ];
 
- export default function Sidebar ({children}: Readonly<{
+export default function Sidebar({ children }: Readonly<{
   children: React.ReactNode;
-}>)  {
-  
+}>) {
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -54,23 +54,24 @@ const items: MenuItem[] = [
         theme={{
           components: {
             Menu: {
-              colorPrimary	: 'purple',
-              colorPrimaryBg : "black",
+              colorPrimary: 'purple',
+              colorPrimaryBg: "black",
               algorithm: true, // Enable algorithm
-            },}
+            },
+          }
         }}
       >
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <UserInfo isClosed={collapsed}/>
-        <Menu theme="dark" defaultSelectedKeys={['1']}  mode="inline" items={items} onClick={({key}) => {router.push(key)}} />
-      </Sider>
+        <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+          <UserInfo isClosed={collapsed} />
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={({ key }) => { router.push(key) }} />
+        </Sider>
       </ConfigProvider>
-      <Layout style={{background: "black"}}>
+      <Layout style={{ background: "black" }}>
         <Header style={{ padding: 0, background: "black" }} />
-        <Content style={{ margin: '0 16px', background:"black"}}>
-          
-           {children}
-         
+        <Content style={{ margin: '0 16px', background: "black" }}>
+
+          {children}
+
         </Content>
       </Layout>
     </Layout>
