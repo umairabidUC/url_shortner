@@ -26,7 +26,7 @@ export default function SignInPage() {
   const { toast } = useToast()
   const router = useRouter();
   const onSubmit: SubmitHandler<z.infer<typeof signInSchema>> = async (data) => {
-    const { error, decode } = await signInAction(data);
+    const { error, decode, token } = await signInAction(data);
 
     if (error) {
       toast({
@@ -41,6 +41,7 @@ export default function SignInPage() {
         localStorage.setItem("username", JSON.stringify(decode?.username))
         localStorage.setItem("email", JSON.stringify(decode?.email))
         localStorage.setItem("role_id", JSON.stringify(decode?.role_id))
+        localStorage.setItem("token",JSON.stringify(token))
       }
       router.push('/dashboard')
     };

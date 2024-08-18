@@ -14,7 +14,7 @@ export async function signInAction(data: { email: string; password: string }) {
       const decode = jwtDecode(response.data.result.access_token)
       console.log("PAYLOAD", decode)
 
-      return { error: null, decode }
+      return { error: null, decode, token:response.data.result.access_token }
     } else {
       return { error: 'Authentication failed' };
     }

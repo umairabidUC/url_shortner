@@ -8,10 +8,20 @@ import { DatabaseModule } from './module/database/database.module';
 import { LoggerModule } from './common/logger/logger.module';
 import { RedirectModule } from './module/redirect/redirect.module';
 import { LogoModule } from './module/logo/logo.module';
+import { APP_GUARD, Reflector } from '@nestjs/core';
+import { AuthGuard } from './module/auth/auth.guard';
+import { JwtModule, JwtService } from '@nestjs/jwt';
+import { StatsModule } from './module/stats/stats.module';
 
 @Module({
-  imports: [AuthModule, UrlsModule, UsersModule, DatabaseModule, LoggerModule, RedirectModule, LogoModule],
+  imports: [AuthModule, UrlsModule, UsersModule, DatabaseModule, LoggerModule, RedirectModule, LogoModule, JwtModule.register({}), StatsModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,{
+    provide: APP_GUARD,
+    useFactory: (jwtService: JwtService, reflector: Reflector) => {
+      return new AuthGuard(jwtService, reflector);
+    },
+    inject: [JwtService, Reflector],
+  },],
 })
 export class AppModule {}

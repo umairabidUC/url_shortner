@@ -37,6 +37,7 @@ const items: MenuItem[] = [
   getItem('Url Management', '/dashboard/urls', "/urls", <RiLinksFill />),
   getItem('Pre-Generated Urls', '/dashboard/pregen', '/users', <UserOutlined />),
   getItem('Logo', '/dashboard/logo', '/logo', <MdQueryStats />),
+  getItem('Stats', '/dashboard/stats', '/stats', <MdQueryStats />),
 ];
 
 export default function Sidebar({ children }: Readonly<{

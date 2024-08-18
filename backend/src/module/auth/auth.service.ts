@@ -14,7 +14,6 @@ export class AuthService {
 
   async signUp(newUser: NewUser): Promise<Token> {
 
-    const {email} = newUser
     
     const hashed_password = await this.hashMaker(newUser.password_hash)
     const user = await this.databaseService.user.create({
@@ -98,7 +97,7 @@ export class AuthService {
         user_id: user_id,
       },
       data:{
-        refresh_token:hashedRefreshToken,
+        refresh_token: hashedRefreshToken
       }
     })
 
