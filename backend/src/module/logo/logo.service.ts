@@ -21,7 +21,7 @@ export class LogoService {
 
     }
 
-    async getLogos(user_id) {
+    async getLogos(user_id: string) {
         const logos = await this.databaseService.logo.findMany({
             where: {
                 user_id
@@ -32,11 +32,20 @@ export class LogoService {
         else throw new NotFoundException;
     }
 
-    async deleteLogo(logo_path: string) {
-        const logo_asset_path = logo_path.split("logos")[1].split(".")[0]
+    async deleteLogo({ logo_path, user_id, logo_id }: { logo_path: string, user_id: string, logo_id: number }) {
+
+        const lastIndex = logo_path.lastIndexOf("/")
+
+        const logo_asset_path = logo_path.slice(lastIndex + 1)
         console.log(logo_asset_path)
         const deletedLogo = await cloudinary.uploader.destroy(`logos${logo_asset_path}`)
-
+        const deleteLogoDb = await this.databaseService.logo.delete({
+            where: {
+                user_id,
+                logo_path,
+                logo_id
+            }
+        })
         if (deletedLogo) {
             console.log("DELETED LOGO: ", deletedLogo)
             return deletedLogo

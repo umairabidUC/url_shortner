@@ -4,29 +4,30 @@ import * as bcrypt from 'bcrypt'
 import { DatabaseService } from '../database/database.service';
 import { Token } from './types';
 import { JwtService } from '@nestjs/jwt';
+import { jwtConstants } from './constants/auth.constants';
 
 @Injectable()
 export class AuthService {
   constructor(private readonly databaseService: DatabaseService,
-              private jwtService: JwtService
-  ){}
+    private jwtService: JwtService
+  ) { }
 
 
   async signUp(newUser: NewUser): Promise<Token> {
 
-    
+
     const hashed_password = await this.hashMaker(newUser.password_hash)
     const user = await this.databaseService.user.create({
-      data:{
+      data: {
         email: newUser.email,
         password_hash: hashed_password,
         username: newUser.username,
         role_id: newUser.role_id
       }
     })
-    if(user) {
+    if (user) {
       const tokens = await this.getTokens(user.username, newUser.email, user.role_id, user.user_id)
-      
+
       await this.updateResfreshToken(user.user_id, tokens.refresh_token)
       return tokens
 
@@ -34,17 +35,17 @@ export class AuthService {
   }
 
 
-  async signIn(email:string, password: string): Promise<Token>{
+  async signIn(email: string, password: string): Promise<Token> {
     const user = await this.databaseService.user.findUnique({
-      where:{
+      where: {
         email: email
       }
-    }) 
-    if(!user) throw new ForbiddenException("Access Denied!!");
-    
-    const passwordMatches = await bcrypt.compare(password,user.password_hash);
-    
-    if(!passwordMatches) throw new ForbiddenException("Access Denied!!");
+    })
+    if (!user) throw new ForbiddenException("Access Denied!!");
+
+    const passwordMatches = await bcrypt.compare(password, user.password_hash);
+
+    if (!passwordMatches) throw new ForbiddenException("Access Denied!!");
 
     const tokens = await this.getTokens(user.username, user.email, user.role_id, user.user_id);
 
@@ -56,11 +57,11 @@ export class AuthService {
 
 
   //Helper Functions
-  hashMaker(password: string){
-    return bcrypt.hash(password,10)
+  hashMaker(password: string) {
+    return bcrypt.hash(password, 10)
   }
 
-  async getTokens(username: string, email: string, role_id: number, user_id: string): Promise<Token>{
+  async getTokens(username: string, email: string, role_id: number, user_id: string): Promise<Token> {
     const [accessToken, refreshToken] = await Promise.all([
       this.jwtService.signAsync({
         sub: user_id,
@@ -68,17 +69,17 @@ export class AuthService {
         email: email,
         role_id: role_id
 
-      },{
-        secret: "KpmIQ1smtCyQ2aK94l+LypYMgyXXE50UhbY1xe2k+As=",
-        expiresIn: 60 * 15,
+      }, {
+        secret: jwtConstants.access_token_secret,
+        expiresIn: 60 * 60 * 24,
       }),
       this.jwtService.signAsync({
         sub: user_id,
         username: username,
         email: email,
         role_id: role_id
-      },{
-        secret: "AQcgf8zqn5cJ2uEfgu8ix3DxaeooWqHtM6sVyc6Rd/4=",
+      }, {
+        secret: jwtConstants.refreh_token_secret,
         expiresIn: 60 * 60 * 24 * 7,
       })
 
@@ -90,13 +91,13 @@ export class AuthService {
     }
 
   }
-  async updateResfreshToken(user_id: string, refreshToken: string){
+  async updateResfreshToken(user_id: string, refreshToken: string) {
     const hashedRefreshToken = await this.hashMaker(refreshToken)
     await this.databaseService.user.updateMany({
-      where:{
+      where: {
         user_id: user_id,
       },
-      data:{
+      data: {
         refresh_token: hashedRefreshToken
       }
     })

@@ -12,9 +12,10 @@ import { APP_GUARD, Reflector } from '@nestjs/core';
 import { AuthGuard } from './module/auth/auth.guard';
 import { JwtModule, JwtService } from '@nestjs/jwt';
 import { StatsModule } from './module/stats/stats.module';
+import { ApikeyModule } from './module/apikey/apikey.module';
 
 @Module({
-  imports: [AuthModule, UrlsModule, UsersModule, DatabaseModule, LoggerModule, RedirectModule, LogoModule, JwtModule.register({}), StatsModule],
+  imports: [AuthModule, UrlsModule, UsersModule, DatabaseModule, LoggerModule, RedirectModule, LogoModule, JwtModule.register({}), StatsModule, ApikeyModule],
   controllers: [AppController],
   providers: [AppService,{
     provide: APP_GUARD,

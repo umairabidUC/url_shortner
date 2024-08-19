@@ -150,4 +150,22 @@ export class UrlsService {
     }
     else throw new NotFoundException;
   }
+
+
+  async updateUrl({ user_id, original_url, short_url, url_type, tag_id }: { user_id: string, original_url: string, short_url: string, url_type: url_type, tag_id: number }) {
+    const updatedUrl = await this.databaseService.url.update({
+      where: {
+        user_id,
+        short_url
+      },
+      data: {
+        original_url,
+        url_type,
+        tag_id
+      }
+    })
+
+    if (updatedUrl) return updatedUrl
+    else throw new NotImplementedException
+  }
 }

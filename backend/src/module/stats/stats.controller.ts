@@ -4,11 +4,11 @@ import { Public } from '../auth/public.auth';
 
 @Controller('stats')
 export class StatsController {
-  constructor(private readonly statsService: StatsService) {}
+  constructor(private readonly statsService: StatsService) { }
 
   @Public()
-  @Get(":url_id")
-  getStats(@Param("url_id") url_id: string){
-    return this.statsService.getStats(url_id)
+  @Get(":user_id")
+  getStats(@Param("user_id") user_id: string) {
+    return this.statsService.getStats(user_id)
   }
 }

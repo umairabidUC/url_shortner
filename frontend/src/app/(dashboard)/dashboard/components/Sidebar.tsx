@@ -3,15 +3,18 @@
 import React, { useState } from 'react';
 import {
   DesktopOutlined,
-  TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, ConfigProvider, Layout, Menu, theme } from 'antd';
+import { ConfigProvider, Layout, Menu, theme } from 'antd';
 import { MdQueryStats } from 'react-icons/md';
 import { RiLinksFill } from 'react-icons/ri';
 import { useRouter } from 'next/navigation';
 import UserInfo from './UserInfo'
+import { RiQrScan2Line } from "react-icons/ri";
+import { IoMdKey } from "react-icons/io";
+
+
 const { Header, Content, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -36,8 +39,9 @@ const items: MenuItem[] = [
   getItem('Dashboard', '/dashboard', "/dashboard", <DesktopOutlined />),
   getItem('Url Management', '/dashboard/urls', "/urls", <RiLinksFill />),
   getItem('Pre-Generated Urls', '/dashboard/pregen', '/users', <UserOutlined />),
-  getItem('Logo', '/dashboard/logo', '/logo', <MdQueryStats />),
+  getItem('Logo', '/dashboard/logo', '/logo', <RiQrScan2Line />),
   getItem('Stats', '/dashboard/stats', '/stats', <MdQueryStats />),
+  getItem('Api Keys', '/dashboard/apikey', '/apikey', <IoMdKey />),
 ];
 
 export default function Sidebar({ children }: Readonly<{
@@ -57,6 +61,7 @@ export default function Sidebar({ children }: Readonly<{
             Menu: {
               colorPrimary: 'purple',
               colorPrimaryBg: "black",
+              colorBgContainer: "black",
               algorithm: true, // Enable algorithm
             },
           }

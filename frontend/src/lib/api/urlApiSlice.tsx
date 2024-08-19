@@ -4,26 +4,26 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const urlsAPI = createApi({
     // Specify a unique name for the API slice in the Redux store
     reducerPath: "urlsAPI",
-    tagTypes: ["Urls", "PreGen", "Tags", "Logo", "Stats"],
+    tagTypes: ["Urls", "PreGen", "Tags", "Logo", "Stats", "ApiKey"],
     // Specify a base query function that will be used to make network requests
     // In this case, we use the fetchBaseQuery function that is a wrapper around the native fetch API
     baseQuery: fetchBaseQuery({
         // Specify the base URL for the API endpoints
         baseUrl: "http://localhost:3500/",
         prepareHeaders: (headers) => {
-            const token =  JSON.parse(localStorage.getItem("token")|| "")// Assuming you store the token in `auth.token`
+            const token = JSON.parse(localStorage.getItem("token") || "")// Assuming you store the token in `auth.token`
             if (token) {
-              headers.set('Authorization', `Bearer ${token}`);
+                headers.set('Authorization', `Bearer ${token}`);
             }
             return headers;
-          },
+        },
     }),
     // Define the endpoints for the API service using a builder callback
     // The builder provides methods for defining query and mutation endpoints
     endpoints: (builder) => ({
         getUserUrls: builder.query({
             query: (user_id: string) => ({ url: `urls/user/${user_id}` }),
-            providesTags: ["Urls"]
+            providesTags: ["Urls"],
         }),
         addNewUrl: builder.mutation({
             query: ({ original_url, short_url, user_id, url_type, tag_id }) => {
@@ -61,6 +61,16 @@ export const urlsAPI = createApi({
             }),
             invalidatesTags: ["PreGen", "Urls"]
         }),
+        updateUrl: builder.mutation({
+            query: ({ user_id, original_url, short_url, url_type, tag_id }) => {
+                return {
+                    url: "urls/",
+                    method: "PATCH",
+                    body: { user_id, original_url, short_url, url_type, tag_id: parseInt(tag_id) }
+                }
+            },
+            invalidatesTags: ["Urls"]
+        }),
         createTag: builder.mutation({
             query: ({ user_id, tag_name }) => ({
                 url: "urls/tags",
@@ -96,22 +106,69 @@ export const urlsAPI = createApi({
             },
             invalidatesTags: ['Logo']
         }),
-        
+        deleteLogo: builder.mutation({
+            query: ({ logo_path, user_id, logo_id }) => {
+                return {
+                    url: "logo",
+                    method: "DELETE",
+                    body: { user_id, logo_path, logo_id }
+                }
+            },
+            invalidatesTags: ["Logo"]
+        }),
+        getApiKey: builder.query({
+            query: (user_id) => ({
+                url: `apikey/${user_id}`,
+                method: "GET"
+            }),
+            providesTags: ["ApiKey"]
+        }),
+        deleteApiKey: builder.mutation({
+            query: ({ user_id, api_key_id }) => ({
+                url: "apikey",
+                method: "DELETE",
+                body: { user_id, api_key_id }
+            }),
+            invalidatesTags: ["ApiKey"]
+        }),
+        updateApiKeyExpiry: builder.mutation({
+            query: ({ api_key_id, expiry }) => ({
+                url: "apikey",
+                method: "PATCH",
+                body: { api_key_id, expiry }
+            }),
+            invalidatesTags: ["ApiKey"]
+        }),
+        createApiKey: builder.mutation({
+            query: ({ user_id, expiry }) => ({
+                url: "apikey",
+                method: "POST",
+                body: { user_id, expiry }
+            }),
+            invalidatesTags: ["ApiKey"]
+        })
+
 
     }),
 });
 
 // Export the auto-generated hooks for the defined endpoints
 // The hooks allow us to easily perform queries and mutations in our React components
-export const { useGetUserUrlsQuery, 
-               useAddNewUrlMutation, 
-               useDeleteUrlMutation, 
-               useGenerateUrlsMutation, 
-               useGetPreGenQuery, 
-               useUpdatePreGenUrlMutation, 
-               useCreateTagMutation, 
-               useGetTagsQuery, 
-               useAddLogoMutation, 
-               useGetLogosQuery, 
-               useGetStatsQuery
-            } = urlsAPI;
+export const { useGetUserUrlsQuery,
+    useAddNewUrlMutation,
+    useDeleteUrlMutation,
+    useGenerateUrlsMutation,
+    useGetPreGenQuery,
+    useUpdatePreGenUrlMutation,
+    useCreateTagMutation,
+    useGetTagsQuery,
+    useAddLogoMutation,
+    useGetLogosQuery,
+    useGetStatsQuery,
+    useDeleteLogoMutation,
+    useGetApiKeyQuery,
+    useDeleteApiKeyMutation,
+    useUpdateApiKeyExpiryMutation,
+    useCreateApiKeyMutation,
+    useUpdateUrlMutation
+} = urlsAPI;

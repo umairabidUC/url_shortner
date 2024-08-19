@@ -68,4 +68,11 @@ export class UrlsController {
     return this.urlsService.updatePreGenUrl(user_id, original_url, short_url, url_type)
 
   }
+
+  @Patch()
+  updateUrl(@Body("user_id") user_id: string, @Body("original_url") original_url: string, @Body("short_url") short_url: string, @Body("url_type") url_type: url_type, @Body("tag_id") tag_id: number) {
+
+    return this.urlsService.updateUrl({ user_id, original_url, short_url, url_type, tag_id })
+
+  }
 }

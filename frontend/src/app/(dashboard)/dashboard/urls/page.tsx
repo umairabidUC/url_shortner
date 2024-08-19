@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ColorPicker, ColorPickerProps, ConfigProvider, GetProp, Popconfirm, QRCode, Space, Table, Tag } from 'antd';
-import { useAddNewUrlMutation, useCreateTagMutation, useDeleteUrlMutation, useGetLogosQuery, useGetTagsQuery, useGetUserUrlsQuery } from '@/lib/api/urlApiSlice';
+import { ColorPicker, ColorPickerProps, ConfigProvider, GetProp, Popconfirm, QRCode, Space, Table, Tag, message } from 'antd';
+import { useAddNewUrlMutation, useCreateTagMutation, useDeleteUrlMutation, useGetLogosQuery, useGetTagsQuery, useGetUserUrlsQuery, useUpdateUrlMutation } from '@/lib/api/urlApiSlice';
 import { nanoid } from '@reduxjs/toolkit';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
@@ -12,6 +12,8 @@ import { FiEdit } from "react-icons/fi";
 import { TiDeleteOutline } from "react-icons/ti";
 import { FaQrcode, FaStore } from "react-icons/fa";
 import { RxDownload } from "react-icons/rx";
+
+
 
 
 
@@ -44,16 +46,25 @@ const handleCopyToClipboard = (short_url: string) => {
 };
 
 export default function Urls() {
+  const [messageApi, contextHolder] = message.useMessage();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { isOpen: isOpenTags, onOpen: onOpenTags, onOpenChange: onOpenChangeTags } = useDisclosure();
   const { isOpen: isOpenQR, onOpen: onOpenQR, onOpenChange: onOpenChangeQR } = useDisclosure();
+  const { isOpen: isOpenEdit, onOpen: onOpenEdit, onOpenChange: onOpenChangeEdit } = useDisclosure();
   const [selectedLogo, setSelectedLogo] = useState("");
+
+
+
+
+
+
 
   const submitForm = (data: urlFormType, onClose: () => void) => {
     console.log("DATA FROM FORM: ", data);
 
     const user_id = JSON.parse(localStorage.getItem("userID") || "")
     addUrl({ ...data, user_id })
+    successMessage("Url Created!!!")
     onClose();
     reset();
   };
@@ -62,7 +73,8 @@ export default function Urls() {
 
   const { register, handleSubmit, reset } = useForm<urlFormType>();
   const { register: registerTags, handleSubmit: handleSubmitTags, reset: resetTags } = useForm<tagType>();
-
+  const { register: registerEdit, handleSubmit: handleSubmitEdit, reset: resetEdit } = useForm<urlFormType>()
+  const [editUrl] = useUpdateUrlMutation();
   const [addUrl] = useAddNewUrlMutation();
   const [deleteUrl] = useDeleteUrlMutation();
   console.log("LOGOS: ", logos)
@@ -73,6 +85,7 @@ export default function Urls() {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+    successMessage("Download Started!")
   }
   const findLogo = (logo: any) => {
     const foundLogo = logo?.result.find((logo: any) => logo.logo_id == selectedLogo)
@@ -89,8 +102,32 @@ export default function Urls() {
     doDownload(url, 'QRCode.svg');
   };
 
+  const submitFormEdit = (data: any, onClose: () => void) => {
+    const user_id = JSON.parse(localStorage.getItem("userID") || "")
+
+    if (user_id) {
+      editUrl({ ...data, user_id })
+      successMessage("Url Edited!!")
+      resetEdit()
+      onClose()
+    } else errorMessage("ERROR: Url editting Failed!")
+  }
+  const errorMessage = (error: string) => {
+    messageApi.open({
+      type: "error",
+      content: error
+    })
+  }
+
+  const successMessage = (success: string) => {
+    messageApi.open({
+      type: "success",
+      content: success
+    })
+  }
 
   type UrlData = {
+    url_id: string
     original_url: string;
     short_url: string;
     status: "active" | "inactive"; // Assuming 0 for inactive, 1 for active
@@ -143,7 +180,85 @@ export default function Urls() {
       render: (_: any, record: UrlData) => (
         <Space size="middle">
           <Button size="sm" color="primary" onClick={() => handleCopyToClipboard(record.short_url)}><MdOutlineContentCopy size="15" /></Button>
-          <Button size="sm" color='warning'><FiEdit size="15" /></Button>
+          <Button size="sm" onPress={onOpenEdit} color='warning'><FiEdit size="15" /></Button>
+          <Modal
+            isOpen={isOpenEdit}
+            onOpenChange={onOpenChangeEdit}
+            placement="top-center"
+            backdrop='blur'
+          >
+            <ModalContent>
+              {(onClose) => (
+                <>
+                  <form onSubmit={handleSubmitEdit(data => submitFormEdit(data, onClose))}>
+                    <ModalHeader className="flex flex-col gap-1">New Url</ModalHeader>
+                    <ModalBody>
+                      <Input
+                        autoFocus
+                        label="Original Url"
+                        placeholder="Enter your Orignial Url"
+                        variant="bordered"
+                        type='url'
+                        defaultValue={record.original_url}
+                        errorMessage="Please enter a valid URL"
+                        {...registerEdit("original_url")}
+                      />
+                      <Input
+                        label="Shortened Url"
+                        placeholder=""
+                        type="text"
+                        variant="bordered"
+                        defaultValue={record.short_url}
+                        disabled={true}
+                        {...registerEdit("short_url")}
+                      />
+                      <Select
+                        label="Select Url Type"
+                        className="max-w-xs"
+                        defaultSelectedKeys={record.url_type}
+                        {...registerEdit("url_type")}
+                      >
+                        <SelectItem key="store">
+                          Store
+                        </SelectItem>
+                        <SelectItem key="product">
+                          Product
+                        </SelectItem>
+                        <SelectItem key="misc">
+                          Misc
+                        </SelectItem>
+                      </Select>
+                      <Select
+                        label="Select Tag"
+                        className="max-w-xs"
+                        {...registerEdit("tag_id")}
+                      >
+
+                        {tags?.result.map((tag: any) => {
+                          const name = tag.tag_name.split("#")[0];
+                          return <SelectItem key={tag.tag_id as number}>
+                            {name}
+                          </SelectItem>
+                        })}
+
+                      </Select>
+
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button color="danger" variant="flat" onPress={onClose}>
+                        Close
+                      </Button>
+                      <Button color="primary" type="submit" isLoading={false}>
+
+                        Submit
+                      </Button>
+                    </ModalFooter>
+                  </form>
+                </>
+
+              )}
+            </ModalContent>
+          </Modal >
           <Popconfirm
             title="Delete the task"
             description="Are you sure to delete this task?"
@@ -153,7 +268,6 @@ export default function Urls() {
           >
             <Button size="sm" color='danger' title='click to delete'><TiDeleteOutline size="15" /></Button>
           </Popconfirm>
-          {/* <Button size="sm" color='danger' title='click to delete' onClick={() => handleDeleteUrl(record.short_url)}><TiDeleteOutline size="15" /></Button> */}
           <Button size="sm" onPress={onOpenQR} color='secondary' title='click to generate qr code'><FaQrcode size={15} /></Button>
           <Modal
             isOpen={isOpenQR}
@@ -217,6 +331,7 @@ export default function Urls() {
   function handleDeleteUrl(short_url: any) {
     const user_id: string = JSON.parse(localStorage.getItem("userID") || "")
     deleteUrl({ short_url, user_id })
+    successMessage("Url Deleted!!")
   }
 
   type Color = GetProp<ColorPickerProps, 'value'>;
@@ -237,6 +352,7 @@ export default function Urls() {
 
   return (
     <>
+      {contextHolder}
       <div className='flex flex-row justify-between'>
         <h1 className='text-white text-2xl'>Your Urls</h1>
         <div className='flex flew-row justify-evenly gap-4'>
